@@ -2,7 +2,7 @@
  * Plugin Name: View Admin As
  * Description: View the WordPress admin as a specific role, switch between users and non-destructively change your capabilities.
  * Plugin URI:  https://wordpress.org/plugins/view-admin-as/
- * Version:     1.4
+ * Version:     1.4.1
  * Author:      Jory Hogeveen
  * Author URI:  http://www.keraweb.nl
  * Text Domain: view-admin-as
@@ -69,7 +69,7 @@
 #wpadminbar #wp-admin-bar-view-as .ab-vaa-search #vaa-searchuser-results {margin: 0; padding: 0;}
 
 #wpadminbar #wp-admin-bar-view-as #wp-admin-bar-caps #wp-admin-bar-caps-quickselect-options {max-height: 400px; min-width: 250px; overflow: hidden; overflow-y: auto; margin: 5px 0; padding: 0; border: 0 solid transparent; border-width: 0 10px 0 0;}
-#wpadminbar #wp-admin-bar-view-as .ab-item input.checkbox {height: 16px; width: 16px; margin: 0 5px; vertical-align: text-bottom;}
+#wpadminbar #wp-admin-bar-view-as .ab-item input.checkbox {height: 16px; width: 16px; margin: 0 5px; vertical-align: text-bottom; box-sizing: border-box;}
 #wpadminbar #wp-admin-bar-view-as .ab-item input.checkbox + label,
 #wpadminbar #wp-admin-bar-view-as .ab-item input.checkbox + label * {line-height: 18px; vertical-align: text-top;}
 #wpadminbar #wp-admin-bar-view-as .ab-item input.checkbox:first-child {margin: 0 5px 0 0;}

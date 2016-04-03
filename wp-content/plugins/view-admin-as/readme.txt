@@ -4,9 +4,9 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YGPLM
 Tags: admin, view, roles, users, switch, capabilities, caps, screen settings, defaults
 Requires at least: 3.8
 Tested up to: 4.5
-Stable tag: 1.4
+Stable tag: 1.4.1
 
-View the WordPress admin as a specific role, switch between users and temporarily change your capabilities. Set default screen settings for roles and apply them on users through various bulk actions.
+View the WordPress admin as a specific role, switch between users, temporarily change your capabilities, set default screen settings for roles.
 
 == Description ==
 
@@ -173,6 +173,12 @@ This plugin is also usefull to support your clients and/or users. For example; m
 9. Module Role defaults window
 
 == Changelog ==
+
+= 1.4.1 =
+
+*	Improvement: Improve how capabilities are fetched
+*	Improvement: Usage of a single instance of the class
+*	Tested with WordPress 4.5-Beta4
 
 = 1.4 =
 

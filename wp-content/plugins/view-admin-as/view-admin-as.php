@@ -3,7 +3,7 @@
  * Plugin Name: View Admin As
  * Description: View the WordPress admin as a specific role, switch between users and temporarily change your capabilities.
  * Plugin URI:  https://wordpress.org/plugins/view-admin-as/
- * Version:     1.4
+ * Version:     1.4.1
  * Author:      Jory Hogeveen
  * Author URI:  http://www.keraweb.nl
  * Text Domain: view-admin-as
@@ -15,9 +15,15 @@
 
 define('VIEW_ADMIN_AS_DIR', plugin_dir_path( __FILE__ ));
 
-$vaa_view_admin_as = new VAA_View_Admin_As();
-
 class VAA_View_Admin_As {
+	
+	/**
+	 * The single instance of the class.
+	 *
+	 * @var VAA_View_Admin_As
+	 * @since 1.4.1
+	 */
+	protected static $_instance = null;
 	
 	/**
 	 * Plugin version
@@ -25,8 +31,8 @@ class VAA_View_Admin_As {
 	 * @since  1.3.1
 	 * @var    String
 	 */
-	private $version = '1.4';
-
+	private $version = '1.4.1';
+	
 	/**
 	 * Database version
 	 *
@@ -34,7 +40,7 @@ class VAA_View_Admin_As {
 	 * @var    String
 	 */
 	private $dbVersion = '1.4';
-
+	
 	/**
 	 * Database option key
 	 *
@@ -42,7 +48,7 @@ class VAA_View_Admin_As {
 	 * @var    String
 	 */
 	private $optionKey = 'vaa_view_admin_as';
-
+	
 	/**
 	 * Database option data
 	 *
@@ -50,7 +56,7 @@ class VAA_View_Admin_As {
 	 * @var    Array
 	 */
 	private $optionData = false;
-
+	
 	/**
 	 * Meta key for view data
 	 *
@@ -66,7 +72,7 @@ class VAA_View_Admin_As {
 	 * @var    Integer
 	 */
 	private $metaExpiration = 86400; // one day: ( 24 * 60 * 60 )
-
+	
 	/**
 	 * Enable functionalities?
 	 *
@@ -74,7 +80,7 @@ class VAA_View_Admin_As {
 	 * @var    Boolean
 	 */
 	private $enable = false;
-
+	
 	/**
 	 * Other VAA modules that are loaded
 	 *
@@ -157,7 +163,6 @@ class VAA_View_Admin_As {
 	 */	
 	private $selectedUser;
 	
-	
 	/**
 	 * Init function to register plugin hook
 	 *
@@ -165,9 +170,27 @@ class VAA_View_Admin_As {
 	 * @return	void
 	 */
 	function __construct() {
+		self::$_instance = $this;
 		
 		// Lets start!
 		add_action( 'plugins_loaded', array( $this, 'init' ) );
+	}
+
+	/**
+	 * Main View Admin As Instance.
+	 *
+	 * Ensures only one instance of View Admin As is loaded or can be loaded.
+	 *
+	 * @since 1.4.1
+	 * @static
+	 * @see View_Admin_As()
+	 * @return View Admin As - Main instance.
+	 */
+	public static function get_instance() {
+		if ( is_null( self::$_instance ) ) {
+			self::$_instance = new self();
+		}
+		return self::$_instance;
 	}
 	
 	/**
@@ -205,18 +228,20 @@ class VAA_View_Admin_As {
 		add_action( 'wp_logout', array( $this, 'reset_view' ) );
 		
 		// Check if current user is logged in and is an admin or (in a network) super admin + disable plugin functions for nedwork admin pages
-		if ( is_user_logged_in() && current_user_can( 'administrator' ) && ! is_network_admin() && $this->curUserSession != '' ) {
+		if ( is_user_logged_in() 
+			&& ( current_user_can( 'administrator' ) || current_user_can( 'view_admin_as' ) ) 
+			&& ! is_network_admin() 
+			&& $this->curUserSession != '' 
+		) {
 			$this->enable = true;
 			
 			// Load translations
 			$this->load_textdomain();
 			
-			// Store available capabilities
-			$this->caps = $this->curUser->allcaps;
-			ksort( $this->caps );
+			$this->store_caps();
 			
-			// Store available roles
 			global $wp_roles;
+			// Store available roles
 			$this->roles = $wp_roles->roles;
 			$this->roles = apply_filters( 'editable_roles', $this->roles );
 			// Multisite install: Admin users are enabled only for super admins
@@ -285,12 +310,61 @@ class VAA_View_Admin_As {
 				}
 			}
 			
-		} else if ( is_user_logged_in() && ! current_user_can( 'administrator' ) ) {
+		} else if ( is_user_logged_in() && ( ! current_user_can( 'administrator' ) || ! current_user_can( 'view_admin_as' ) ) ) {
 			
 			// Extra security check for non-admins who did something naughty
 			delete_user_meta( get_current_user_id(), 'vaa-view-admin-as' );
 		}
 
+	}
+	
+	/**
+	 * Get available capabilities
+	 *
+	 * @since   1.4.1
+	 * @return	void
+	 */
+	function store_caps() {
+		
+		// Get all available roles and capabilities
+		global $wp_roles;
+		// Get current user capabilities
+		$this->caps = $this->curUser->allcaps;
+		
+		if ( is_super_admin( $this->curUser->ID ) ) {
+			
+			// Store available capabilities
+			$role_caps = array();
+			foreach ( $wp_roles->role_objects as $key => $role ) {
+				if ( is_array( $role->capabilities ) ) {
+					foreach ( $role->capabilities as $cap => $grant ) {
+						$role_caps[ $cap ] = $cap;
+					}
+				}
+			}
+			
+			// To support Members filters
+			$role_caps = apply_filters( 'members_get_capabilities', $role_caps );
+			// To support Pods filters
+			$role_caps = apply_filters( 'pods_roles_get_capabilities', $role_caps );
+			
+			$role_caps = array_unique( $role_caps );
+			
+			// Add new capabilities to the capability array
+			foreach ( $role_caps as $capKey => $capVal ) {
+				if ( is_string( $capVal ) && ! is_numeric( $capVal ) && ! array_key_exists( $capVal, $this->caps ) ) {
+					$this->caps[ $capVal ] = 0;
+				}
+				if ( is_string( $capKey ) && ! is_numeric( $capKey ) && ! array_key_exists( $capKey, $this->caps ) ) {
+					$this->caps[ $capKey ] = 0;
+				}
+			}
+		}
+		// Remove role names
+		foreach ( $wp_roles->roles as $roleKey => $role ) {
+			unset( $this->caps[ $roleKey ] );
+		}
+		ksort( $this->caps );
 	}
 	
 	/**
@@ -340,7 +414,7 @@ class VAA_View_Admin_As {
 		}
 		
 		if ( $filterCaps != false ) {
-			if ( array_key_exists( $cap, $this->caps ) ) { // make sure this cap is known for the current user
+			if ( array_key_exists( $cap, $this->caps ) ) { // make sure this capability is known
 				if ( ! isset( $filterCaps[$cap] ) || ( (int) $filterCaps[$cap] != 1 ) ) {
 					$caps[] = 'do_not_allow';
 				}
@@ -408,7 +482,8 @@ class VAA_View_Admin_As {
 			$groupUserRoles = true; 
 			$searchUsers = true;
 		}
-		
+		// Make sure we have the latest added capabilities
+		$this->store_caps();
 		// Add capabilities group
 		if ( $this->caps && count( $this->caps ) > 0 ) {
 			
@@ -502,9 +577,12 @@ class VAA_View_Admin_As {
 				$capsQuickselectContent = '';
 				foreach ($this->caps as $capName => $capVal) {
 					$class = 'vaa-cap-item';
-					if ( isset( $this->viewAs['caps'] ) && $this->viewAs['caps'][$capName] != 1 ) {
-						$checked = '';						
-					} else {
+					$checked = '';
+					if ( isset( $this->viewAs['caps'][$capName] ) ) {
+						if ( $this->viewAs['caps'][$capName] == 1 ) {
+							$checked = ' checked="checked"';
+						}
+					} else if ( $capVal == 1 ) {
 						$checked = ' checked="checked"';
 					}
 					$capsQuickselectContent .= 
@@ -524,7 +602,7 @@ class VAA_View_Admin_As {
 					),
 				) );
 		}
-				
+		
 		// Add roles group
 		if ( $this->roles && count( $this->roles ) > 0 ) {
 			$groupRoles = true;
@@ -1014,7 +1092,11 @@ class VAA_View_Admin_As {
 		if ( is_admin_bar_showing() ) {
 			wp_enqueue_style( 'vaa_view_admin_as_style', plugin_dir_url( __FILE__ ) . 'style.css', array(), $this->version );
 			wp_enqueue_script( 'vaa_view_admin_as_script', plugin_dir_url( __FILE__ ) . 'script.js', array( 'jquery' ), $this->version );
-			wp_localize_script( 'vaa_view_admin_as_script', 'VAA_View_Admin_As', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ), 'siteurl' => get_site_url(), '__no_users_found' => __('No users found.') ) );
+			wp_localize_script( 'vaa_view_admin_as_script', 'VAA_View_Admin_As', array( 
+				'ajaxurl' => admin_url( 'admin-ajax.php' ), 
+				'siteurl' => get_site_url(), 
+				'__no_users_found' => __( 'No users found.', 'view-admin-as' ) 
+			) );
 		}
 	}
 	
@@ -1079,5 +1161,21 @@ class VAA_View_Admin_As {
 	function get_roles() { return $this->roles; }
 	function get_users() { return $this->users; }
 	function get_selectedUser() { return $this->selectedUser; }
+	function get_version() { return $this->version; }
 	
 } // end class
+
+/**
+ * Main instance of View Admin As.
+ *
+ * Returns the main instance of VAA_View_Admin_As to prevent the need to use globals.
+ *
+ * @since  0.1.2
+ * @return VAA_View_Admin_As
+ */
+function View_Admin_As() {
+	return VAA_View_Admin_As::get_instance();
+}
+
+// Global for backwards compatibility.
+$GLOBALS['view_admin_as'] = View_Admin_As();
