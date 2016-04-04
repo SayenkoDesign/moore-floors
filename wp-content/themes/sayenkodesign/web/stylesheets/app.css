@@ -2459,7 +2459,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.5;
-  color: #0a0a0a;
+  color: #4a4a4a;
   background: #fefefe;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -3294,7 +3294,7 @@ h6 {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
-  color: inherit;
+  color: #BC060;
   text-rendering: optimizeLegibility;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -3403,7 +3403,7 @@ cite {
     content: '\2014 \0020'; }
 
 abbr {
-  color: #0a0a0a;
+  color: #4a4a4a;
   cursor: help;
   border-bottom: 1px dotted #0a0a0a; }
 
@@ -4085,7 +4085,7 @@ select {
   border: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: 0;
   position: relative;
-  color: #0a0a0a;
+  color: #4a4a4a;
   background-color: white; }
   .callout > :first-child {
     margin-top: 0; }
@@ -5225,7 +5225,7 @@ table {
   table thead,
   table tfoot {
     background: #f8f8f8;
-    color: #0a0a0a; }
+    color: #4a4a4a; }
     table thead tr,
     table tfoot tr {
       background: transparent; }

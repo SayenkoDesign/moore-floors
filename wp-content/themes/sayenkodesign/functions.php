@@ -1,10 +1,21 @@
 <?php
 require_once __DIR__.'/App/bootstrap.php';
 
+use Sayenko\Stylesheet;
+use Sayenko\Script;
+
 // include ACF fields if not in debug mode
 if (!WP_DEBUG) {
     require_once __DIR__.'/App/ACF/options.php';
 }
+
+$montserrat = new Stylesheet('montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
+$stylesheet = new Stylesheet('stylesheet', get_stylesheet_directory_uri() . '/web/stylesheets/app.css', [$montserrat->getHandle()]);
+$montserrat->register();
+$stylesheet->register();
+
+$script = new Script('script', get_stylesheet_directory_uri() . '/web/scripts-min/app.min.js');
+$script->register();
 
 // options page for ACF
 if (function_exists('acf_add_options_page')) {
