@@ -20,6 +20,19 @@ class WordPress extends Twig_Extension
     public function getFunctions()
     {
         return array(
+            new \Twig_SimpleFunction('wp_get_menu_by_location', function ($location) {
+                if(empty($location)) {
+                    return false;
+                }
+                $locations = get_nav_menu_locations();
+                if(!isset($locations[$location])) {
+                    return false;
+                }
+                $menu_obj = get_term( $locations[$location], 'nav_menu' );
+
+                return $menu_obj;
+            }),
+
             new \Twig_SimpleFunction('wp_has_action', function ($tag, $functionToCheck = false) {
                 return has_action($tag, $functionToCheck);
             }),

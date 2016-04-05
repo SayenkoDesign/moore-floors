@@ -1,0 +1,60 @@
+<section class="footer">
+    <div class="row top">
+        <div class="large-6 columns images">
+            {% for image in get_field('footer_images', 'option') %}
+                <img src="{{ image.images.url }}" alt="">
+            {% endfor %}
+        </div>
+        <div class="large-6 columns menu">
+            <div class="row">
+                <div class="medium-6 columns">
+                    {% if wp_has_nav_menu('footer_left') %}
+                        <h4>{{ wp_get_menu_by_location('footer_left').name | raw }}</h4>
+                        {{ wp_nav_menu({
+                            'theme_location': 'footer_left',
+                            'menu_class': 'vertical menu',
+                        }) | raw }}
+                    {% endif %}
+                </div>
+                <div class="medium-6 columns">
+                    {% if wp_has_nav_menu('footer_left') %}
+                        <h4>{{ wp_get_menu_by_location('footer_right').name | raw }}</h4>
+                        {{ wp_nav_menu({
+                            'theme_location': 'footer_right',
+                            'menu_class': 'vertical menu',
+                        }) | raw }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bottom">
+        <div class="large-8 columns">
+            <div class="copyright">
+                {{ get_field('copyright_content', 'option') | raw }}
+            </div>
+        </div>
+        <div class="large-4 columns">
+            <div class="social">
+                {% if get_field('google_plus', 'option') %}
+                    <a href="{{ get_field('google_plus', 'option') }}" target="_blank" class="fa fa-fw fa-google-plus"></a>
+                {% endif %}
+                {% if get_field('pinterest', 'option') %}
+                    <a href="{{ get_field('pinterest', 'option') }}" target="_blank" class="fa fa-fw fa-pinterest"></a>
+                {% endif %}
+                {% if get_field('twitter', 'option') %}
+                    <a href="{{ get_field('twitter', 'option') }}" target="_blank" class="fa fa-fw fa-twitter"></a>
+                {% endif %}
+                {% if get_field('houzz', 'option') %}
+                    <a href="{{ get_field('houzz', 'option') }}" target="_blank" class="fa fa-fw fa-houzz"></a>
+                {% endif %}
+                {% if get_field('youtube', 'option') %}
+                    <a href="{{ get_field('youtube', 'option') }}" target="_blank" class="fa fa-fw fa-youtube"></a>
+                {% endif %}
+                {% if get_field('facebook', 'option') %}
+                    <a href="{{ get_field('facebook', 'option') }}" target="_blank" class="fa fa-fw fa-facebook"></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

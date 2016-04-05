@@ -4,3 +4,12 @@
 @include foundation-everything();
 @import "classes";
 @import "modules/cta";
+@import "modules/footer";
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+h2, h3, h4, h5, h6 {
+  color: $red-dark;
+}

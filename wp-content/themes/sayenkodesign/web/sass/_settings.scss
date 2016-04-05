@@ -1,8 +1,9 @@
 // colors
 // ------
-$red: #BC060;// links and large red headings
+$red: #BC0606;// links and large red headings
 $red-dark: #83290e;// small red headings
 $tan: #eaeae5;//background tan
+$tan-dark: #d3d3bb;// footer background and tan heading in colored sections
 $brown: #A97C50;// links in footer and tan sections/button
 $brown-light: #b4916b;// testimonial
 $gray-font: #4a4a4a;// body font
@@ -13,3 +14,10 @@ $primary-color: $red;
 // fonts
 $body-font-color: $gray-font;
 $header-color: $red;
+
+$header-sizes: (
+  'h1': 36,
+  'h2': 30,
+  'h3': 24,
+  'h4': 18
+);

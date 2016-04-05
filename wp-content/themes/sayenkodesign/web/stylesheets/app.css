@@ -3294,7 +3294,7 @@ h6 {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
-  color: #BC060;
+  color: #BC0606;
   text-rendering: optimizeLegibility;
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -3307,38 +3307,6 @@ h6 {
   h6 small {
     color: #cacaca;
     line-height: 0; }
-
-h1 {
-  font-size: 1.5rem; }
-
-h2 {
-  font-size: 1.25rem; }
-
-h3 {
-  font-size: 1.1875rem; }
-
-h4 {
-  font-size: 1.125rem; }
-
-h5 {
-  font-size: 1.0625rem; }
-
-h6 {
-  font-size: 1rem; }
-
-@media screen and (min-width: 40em) {
-  h1 {
-    font-size: 3rem; }
-  h2 {
-    font-size: 2.5rem; }
-  h3 {
-    font-size: 1.9375rem; }
-  h4 {
-    font-size: 1.5625rem; }
-  h5 {
-    font-size: 1.25rem; }
-  h6 {
-    font-size: 1rem; } }
 
 a {
   color: #2199e8;
@@ -5666,3 +5634,71 @@ table.hover tr:nth-of-type(even):hover {
     background-color: #A74021; }
   .cta .call {
     background-color: #83290E; }
+
+.footer {
+  background-color: #d3d3bb;
+  padding: 2rem 0; }
+  .footer .top {
+    margin-bottom: 2rem; }
+  .footer .images {
+    margin-bottom: 2rem; }
+    .footer .images img {
+      display: block;
+      margin: 0 auto 1rem; }
+      @media screen and (min-width: 40em) {
+        .footer .images img {
+          display: inline;
+          padding: 0 1rem;
+          margin: 0; } }
+      @media screen and (min-width: 64em) {
+        .footer .images img {
+          padding: 0 3rem 0 0; }
+          .footer .images img:last-of-type {
+            padding-right: 0; } }
+    @media screen and (min-width: 64em) {
+      .footer .images {
+        margin-bottom: 0; } }
+  .footer .bottom {
+    color: #BC0606; }
+    .footer .bottom a {
+      color: #A97C50; }
+      .footer .bottom a:hover {
+        color: #bc9670; }
+  .footer h4 {
+    margin: 0; }
+    @media screen and (min-width: 64em) {
+      .footer h4 {
+        margin-top: 0.875rem; } }
+  .footer .menu a {
+    color: #4a4a4a;
+    padding: 0.25rem 0;
+    font-size: 0.9375rem;
+    font-weight: bold; }
+    .footer .menu a:hover {
+      color: #7d7d7d; }
+  .footer .copyright {
+    font-size: 0.9375rem; }
+    @media screen and (min-width: 64em) {
+      .footer .copyright {
+        margin: 0.6rem 0 0 0; } }
+  .footer .social .fa {
+    background-color: #A97C50;
+    color: #d3d3bb;
+    width: 2.5rem;
+    padding: 0.75rem 0; }
+    .footer .social .fa:hover, .footer .social .fa:focus {
+      background-color: #bc9670;
+      color: #d3d3bb; }
+  @media screen and (min-width: 64em) {
+    .footer .social {
+      float: right; } }
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .footer {
+      text-align: center; } }
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-weight: bold; }
+
+h2, h3, h4, h5, h6 {
+  color: #83290e; }

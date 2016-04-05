@@ -1,0 +1,73 @@
+.footer {
+  background-color: $tan-dark;
+  padding: $global-padding * 2 0;
+  .top {
+    margin-bottom: $global-margin*2;
+  }
+  .images {
+    margin-bottom: $global-margin*2;
+    img {
+      display: block;
+      margin: 0 auto $global-margin;
+      @include breakpoint(medium) {
+        display: inline;
+        padding: 0 1rem;
+        margin: 0;
+      }
+      @include breakpoint(large) {
+        padding: 0 $global-padding*3 0 0;
+        &:last-of-type {
+          padding-right: 0;
+        }
+      }
+    }
+    @include breakpoint(large) {
+      margin-bottom: 0;
+    }
+  }
+  .bottom {
+    color: $red;
+    a {
+      color: $brown;
+      &:hover {
+        color: lighten($brown, 10%);
+      }
+    }
+  }
+  h4 {
+    margin: 0;
+    @include breakpoint(large) {
+      margin-top: rem-calc(14px);
+    }
+  }
+  .menu {
+    a {
+      color: $gray-font;
+      padding: 0.25rem 0;
+      font-size: rem-calc(15px);
+      font-weight: bold;
+      &:hover {
+        color: lighten($gray-font, 20%);
+      }
+    }
+  }
+  .copyright {
+    font-size: rem-calc(15px);
+    @include breakpoint(large) {
+      margin: 0.6rem 0 0 0;
+    }
+  }
+  .social {
+    .fa {
+      @include button-style($brown, lighten($brown, 10%), $tan-dark);
+      width: rem-calc(40px);
+      padding: 0.75rem 0;
+    }
+    @include breakpoint(large) {
+      float: right;
+    }
+  }
+  @include breakpoint(medium only) {
+    text-align: center;
+  }
+}

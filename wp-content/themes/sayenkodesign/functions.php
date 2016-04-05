@@ -4,14 +4,28 @@ require_once __DIR__.'/App/bootstrap.php';
 use Sayenko\Stylesheet;
 use Sayenko\Script;
 
+// stylesheets
 $montserrat = new Stylesheet('montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
-$stylesheet = new Stylesheet('stylesheet', get_stylesheet_directory_uri() . '/web/stylesheets/app.css', [$montserrat->getHandle()]);
+$fontawesome = new Stylesheet('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+$stylesheet = new Stylesheet('stylesheet', get_stylesheet_directory_uri() . '/web/stylesheets/app.css', [
+    $montserrat->getHandle(),
+    $fontawesome->getHandle()
+]);
 $stylesheet->alwaysUpdate();
 $montserrat->register();
+$fontawesome->register();
 $stylesheet->register();
 
 $script = new Script('script', get_stylesheet_directory_uri() . '/web/scripts-min/app.min.js');
 $script->register();
+
+// menus
+register_nav_menus([
+    'main' => 'Main menu',
+    'secondary' => 'Secondary menu',
+    'footer_left' => 'Left footer menu',
+    'footer_right' => 'Right footer menu',
+]);
 
 // options page for ACF
 if (function_exists('acf_add_options_page')) {
