@@ -4,13 +4,9 @@ require_once __DIR__.'/App/bootstrap.php';
 use Sayenko\Stylesheet;
 use Sayenko\Script;
 
-// include ACF fields if not in debug mode
-if (!WP_DEBUG) {
-    require_once __DIR__.'/App/ACF/options.php';
-}
-
 $montserrat = new Stylesheet('montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
 $stylesheet = new Stylesheet('stylesheet', get_stylesheet_directory_uri() . '/web/stylesheets/app.css', [$montserrat->getHandle()]);
+$stylesheet->alwaysUpdate();
 $montserrat->register();
 $stylesheet->register();
 
@@ -32,6 +28,12 @@ if (function_exists('acf_add_options_page')) {
         'page_title'   => 'Social',
         'menu_title'   => 'Social',
         'parent_slug'  => $parent['menu_slug'],
+    ]);
+
+    acf_add_options_sub_page([
+        'page_title'  => 'Call to Action',
+        'menu_title'  => 'Call to Action',
+        'parent_slug' => $parent['menu_slug'],
     ]);
 
     acf_add_options_sub_page([

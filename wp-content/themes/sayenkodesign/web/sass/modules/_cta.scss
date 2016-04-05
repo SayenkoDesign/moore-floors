@@ -1,0 +1,23 @@
+.cta {
+  background: -moz-linear-gradient(left, #926453 50%, #83290E 50%);
+  background: -webkit-gradient(linear, left top, right top, from(#926453), color-stop(.5, #926453), color-stop(.5, #83290E));
+  a {
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .columns {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .price {
+    background-color: #926453;
+  }
+  .schedule {
+    background-color: #A74021;
+  }
+  .call {
+    background-color: #83290E;
+  }
+}

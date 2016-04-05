@@ -5646,3 +5646,23 @@ table.hover tr:nth-of-type(even):hover {
 .alignleft {
   float: left;
   padding: 0 1rem 1rem 0; }
+
+.cta {
+  background: -moz-linear-gradient(left, #926453 50%, #83290E 50%);
+  background: -webkit-gradient(linear, left top, right top, from(#926453), color-stop(0.5, #926453), color-stop(0.5, #83290E)); }
+  .cta a {
+    display: block;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  .cta .columns {
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+  .cta .price {
+    background-color: #926453; }
+  .cta .schedule {
+    background-color: #A74021; }
+  .cta .call {
+    background-color: #83290E; }

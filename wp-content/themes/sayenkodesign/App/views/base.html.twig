@@ -28,6 +28,30 @@
         </section>
     {% endblock %}
 
+    {% block cta %}
+        {% if get_field('price_image', 'option') or get_field('schedule_image', 'option') or get_field('call_image', 'option') %}
+            <section class="cta">
+                <div class="row" data-equalizer data-equalize-on="medium">
+                    <div class="medium-4 columns price" data-equalizer-watch>
+                        <a href="">
+                            <img src="{{ get_field('price_image', 'option').url }}" alt="" />
+                        </a>
+                    </div>
+                    <div class="medium-4 columns schedule" data-equalizer-watch>
+                        <a href="">
+                            <img src="{{ get_field('schedule_image', 'option').url }}" alt="" />
+                        </a>
+                    </div>
+                    <div class="medium-4 columns call" data-equalizer-watch>
+                        <a href="">
+                            <img src="{{ get_field('call_image', 'option').url }}" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+    {% endblock %}
+
     {% block footer %}
         {% include "layout/footer.html.twig" %}
     {% endblock %}
