@@ -51,6 +51,12 @@ if (function_exists('acf_add_options_page')) {
     ]);
 
     acf_add_options_sub_page([
+        'page_title'  => 'Header',
+        'menu_title'  => 'Header',
+        'parent_slug' => $parent['menu_slug'],
+    ]);
+
+    acf_add_options_sub_page([
         'page_title'  => 'Footer',
         'menu_title'  => 'Footer',
         'parent_slug' => $parent['menu_slug'],

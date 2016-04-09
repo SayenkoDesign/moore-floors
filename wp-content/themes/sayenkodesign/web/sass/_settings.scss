@@ -7,9 +7,15 @@ $tan-dark: #d3d3bb;// footer background and tan heading in colored sections
 $brown: #A97C50;// links in footer and tan sections/button
 $brown-light: #b4916b;// testimonial
 $gray-font: #4a4a4a;// body font
-$gray-nav:  #404449;// navigation font color
 
-$primary-color: $red;
+$foundation-palette: (
+  primary: $red,
+  brown: $brown,
+  secondary: #777,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #ec5840
+);
 
 // fonts
 $body-font-color: $gray-font;
