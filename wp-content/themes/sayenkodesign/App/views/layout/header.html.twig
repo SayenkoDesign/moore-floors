@@ -39,6 +39,13 @@
                 <img src="{{ get_field('header_logo', 'option').url }}" class="logo">
             </div>
             <div class="float-right">
+
+                {{ wp_nav_menu_dropdown({
+                    'theme_location': 'main',
+                    'menu_class': 'horizontal',
+                    'container_id': 'primary-navigation'
+                }) | raw }}
+                <!--
                 <div id="primary-navigation">
                     <ul class="horizontal dropdown menu" data-dropdown-menu>
                         <li>
@@ -52,6 +59,7 @@
                         <li><a href="#">Item 4</a></li>
                     </ul>
                 </div>
+                -->
             </div>
         </div>
     </header>

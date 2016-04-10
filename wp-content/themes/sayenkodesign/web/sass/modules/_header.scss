@@ -82,7 +82,11 @@
         left: 0;
         right: 0;
         text-align: right;
-        padding-right: calc(100%/2 - 1200px/2 + 1rem);
+        padding-right: calc(100%/2 - 1200px/2 + 2rem);//50% of screen - 50% of row + parent link right padding
+        li {
+          display: inline-block;
+          width: auto;
+        }
         a {
           text-transform: none;
           padding: 1rem;
