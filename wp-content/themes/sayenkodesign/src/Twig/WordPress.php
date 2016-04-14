@@ -1274,6 +1274,12 @@ class WordPress extends Twig_Extension
                 return str_replace('sub-menu', 'menu', wp_nav_menu($args));
             }),
 
+            new \Twig_SimpleFunction('wp_nav_menu_accordion', function ($args) {
+                $args['items_wrap'] = '<ul id="%1$s" class="dropdown menu %2$s" data-accordion-menu>%3$s</ul>';
+                $args['echo'] = false;
+                return str_replace('sub-menu', 'menu', wp_nav_menu($args));
+            }),
+
             new \Twig_SimpleFunction('wp_language_attributes', function ($doctype = 'html') {
                 ob_start();
                 language_attributes($doctype);

@@ -5666,6 +5666,15 @@ table.hover tr:nth-of-type(even):hover {
   .cta .call {
     background-color: #83290E; }
 
+.header #primary-mobile-navigation {
+  background-color: #d3d3bb; }
+  .header #primary-mobile-navigation .dropdown.menu {
+    text-align: center; }
+    .header #primary-mobile-navigation .dropdown.menu a {
+      color: #4a4a4a; }
+      .header #primary-mobile-navigation .dropdown.menu a:hover {
+        color: #BC0606; }
+
 .header .top {
   text-transform: uppercase; }
   .header .top ul {

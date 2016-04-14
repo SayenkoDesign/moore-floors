@@ -1,4 +1,18 @@
 .header {
+
+  #primary-mobile-navigation {
+    background-color: $tan-dark;
+    .dropdown.menu {
+      text-align: center;
+      a {
+        color: $body-font-color;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+
   .top {
     text-transform: uppercase;
     ul {
