@@ -6008,14 +6008,101 @@ table.hover tr:nth-of-type(even):hover {
       .services .box:hover .button {
         display: inline-block; } }
 
+.why {
+  padding: 2rem 0 6rem 0;
+  background-color: #eaeae5;
+  position: relative; }
+  .why .background {
+    display: none; }
+    @media screen and (min-width: 40em) {
+      .why .background {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 0; } }
+  .why .title, .why .accordion, .why blockquote {
+    position: relative;
+    z-index: 1; }
+  .why .title {
+    position: relative; }
+    .why .title::before, .why .title::after {
+      content: ' ';
+      display: table; }
+    .why .title::after {
+      clear: both; }
+    .why .title h1 {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      left: 100px; }
+    .why .title small {
+      display: block;
+      line-height: 1; }
+    .why .title img {
+      float: left; }
+
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: bold; }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    color: #4a4a4a;
+    display: block;
+    line-height: 1; }
 
 h2, h3, h4, h5, h6 {
   color: #83290e; }
-  h2 small, h3 small, h4 small, h5 small, h6 small {
-    color: #4a4a4a; }
+
+blockquote {
+  border: none;
+  padding: 0; }
+  blockquote p {
+    color: #4a4a4a;
+    font-size: 1.25rem; }
+  blockquote cite {
+    font-size: 1.25rem;
+    color: #b4916b; }
 
 .slick-slide {
   height: auto; }
+
+.accordion {
+  border: none;
+  background-color: transparent;
+  margin-bottom: 2rem; }
+  .accordion .accordion-title, .accordion .accordion-content {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent; }
+  .accordion .accordion-title {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    border: none;
+    margin-top: 1.5rem;
+    padding: 0 0 0 1.25rem;
+    font-size: 1.125rem;
+    background-color: transparent; }
+    .accordion .accordion-title:hover, .accordion .accordion-title:focus {
+      background-color: transparent; }
+    .accordion .accordion-title::before {
+      right: auto;
+      left: 0;
+      top: auto;
+      bottom: 0;
+      content: "\f067";
+      font-family: "FontAwesome"; }
+  .accordion .is-active .accordion-title {
+    background-color: transparent; }
+    .accordion .is-active .accordion-title::before {
+      content: "\f068";
+      font-family: "FontAwesome"; }
+  .accordion .accordion-content {
+    font-size: 0.9375rem;
+    border: none;
+    padding: 0; }
+    .accordion .accordion-content p {
+      margin: 0; }
+  @media screen and (min-width: 40em) {
+    .accordion {
+      margin-bottom: 0; } }

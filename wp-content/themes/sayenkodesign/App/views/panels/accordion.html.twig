@@ -1,0 +1,10 @@
+<ul class="accordion" data-accordion>
+    {% for item in accordion %}
+        <li class="accordion-item" data-accordion-item>
+            <a href="#" class="accordion-title">{{ item.title | raw }}</a>
+            <div class="accordion-content" data-tab-content>
+                {{ item.content | raw }}
+            </div>
+        </li>
+    {% endfor %}
+</ul>

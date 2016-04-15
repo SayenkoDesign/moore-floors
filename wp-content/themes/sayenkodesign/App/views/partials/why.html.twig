@@ -1,0 +1,23 @@
+<section class="why">
+    <div class="background"><img src="{{ background.url }}" alt=""></div>
+    <div class="row column">
+        <div class="title">
+            <img src="{{ icon.url }}" alt="">
+            <h1>
+                <small>{{ title_1 | raw }}</small>
+                {{ title_2 | raw }}
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="medium-6 columns">
+            {{ accordion | raw }}
+        </div>
+        <div class="medium-6 columns">
+            <blockquote class="testimonial">
+                {{ testimonial_quote | raw }}
+                <cite>{{ testimonial_author | raw  }}</cite>
+            </blockquote>
+        </div>
+    </div>
+</section>

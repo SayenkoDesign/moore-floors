@@ -8,18 +8,82 @@
 @import "modules/footer";
 @import "modules/hero-slider";
 @import "modules/services";
+@import "modules/why";
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: bold;
+  small {
+    color: $body-font-color;
+    display: block;
+    line-height: 1;
+  }
 }
 h2, h3, h4, h5, h6 {
   color: $red-dark;
-  small {
+}
+
+blockquote {
+  border: none;
+  padding: 0;
+  p {
     color: $body-font-color;
+    font-size: rem-calc(20px);
+  }
+  cite {
+    font-size: rem-calc(20px);
+    color: $brown-light;
   }
 }
 
 .slick-slide {
   height: auto;
+}
+
+.accordion {
+  border: none;
+  background-color: transparent;
+  margin-bottom: $global-margin*2;
+  .accordion-title, .accordion-content {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent;
+  }
+  .accordion-title {
+    font-family: $body-font-family;
+    border: none;
+    margin-top: $global-margin * 1.5;
+    padding: 0 0 0 rem-calc(20px);
+    font-size: rem-calc(18px);
+    background-color: transparent;
+    &:hover, &:focus {
+      background-color: transparent;
+    }
+    &::before {
+      right: auto;
+      left: 0;
+      top: auto;
+      bottom: 0;
+      content: "\f067";
+      font-family: "FontAwesome";
+    }
+  }
+  .is-active .accordion-title {
+    background-color: transparent;
+    &::before {
+      content: "\f068";
+      font-family: "FontAwesome";
+    }
+  }
+  .accordion-content {
+    font-size: rem-calc(15px);
+    border: none;
+    padding: 0;
+    p {
+      margin: 0;
+    }
+  }
+  @include breakpoint(medium) {
+    margin-bottom: 0;
+  }
 }

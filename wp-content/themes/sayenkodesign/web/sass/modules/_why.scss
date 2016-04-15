@@ -1,0 +1,36 @@
+.why {
+  padding: $global-margin * 2 0 $global-margin * 6 0;
+  background-color: $tan;
+  position: relative;
+  .background {
+    display: none;
+    @include breakpoint(medium) {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
+  .title, .accordion, blockquote {
+    position: relative;
+    z-index: 1;
+  }
+  .title {
+    position: relative;
+    @include clearfix;
+    h1 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 100px;
+    }
+    small {
+      display: block;
+      line-height: 1;
+    }
+    img {
+      float: left;
+    }
+  }
+}
