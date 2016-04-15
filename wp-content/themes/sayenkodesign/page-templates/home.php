@@ -25,6 +25,18 @@ while (have_rows('content')) {
             }
             $flexibleContent[] = $twig->render('panels/hero-slider.html.twig', ['slides' => $data]);
             break;
+        case 'services':
+            $services = get_sub_field('warranty_image');
+            $data = [
+                'warranty_image' => get_sub_field('warranty_image'),
+                'warranty_text' => get_sub_field('warranty_text'),
+                'title_1' => get_sub_field('title_line_1'),
+                'title_2' => get_sub_field('title_line_2'),
+                'content' => get_sub_field('content'),
+                'boxes' => get_sub_field('boxes'),
+            ];
+            $flexibleContent[] = $twig->render('partials/services.html.twig', $data);
+            break;
         default:
             throw new \Exception("Template does not support a layout for $layout");
             break;
