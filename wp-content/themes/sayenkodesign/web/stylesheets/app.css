@@ -6009,7 +6009,7 @@ table.hover tr:nth-of-type(even):hover {
         display: inline-block; } }
 
 .why {
-  padding: 2rem 0 6rem 0;
+  padding: 2rem 0 8rem 0;
   background-color: #eaeae5;
   position: relative; }
   .why .background {
@@ -6021,6 +6021,13 @@ table.hover tr:nth-of-type(even):hover {
         right: 0;
         bottom: 0;
         z-index: 0; } }
+    @media screen and (min-width: 40em) {
+      .why .background {
+        right: auto;
+        left: calc(50% + 600px);
+        -webkit-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+                transform: translateX(-100%); } }
   .why .title, .why .accordion, .why blockquote {
     position: relative;
     z-index: 1; }
@@ -6043,6 +6050,8 @@ table.hover tr:nth-of-type(even):hover {
       line-height: 1; }
     .why .title img {
       float: left; }
+  .why blockquote {
+    max-width: 400px; }
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;

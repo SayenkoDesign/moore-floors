@@ -1,5 +1,5 @@
 .why {
-  padding: $global-margin * 2 0 $global-margin * 6 0;
+  padding: $global-margin * 2 0 $global-margin * 8 0;
   background-color: $tan;
   position: relative;
   .background {
@@ -10,6 +10,11 @@
       right: 0;
       bottom: 0;
       z-index: 0;
+    }
+    @include breakpoint(medium) {
+      right: auto;
+      left: calc(50% + 600px);
+      transform: translateX(-100%);
     }
   }
   .title, .accordion, blockquote {
@@ -32,5 +37,8 @@
     img {
       float: left;
     }
+  }
+  blockquote {
+    max-width: 400px;
   }
 }
