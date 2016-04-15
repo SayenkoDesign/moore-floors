@@ -20,12 +20,16 @@
     {% endblock %}
 
     {% block content %}
-        <section class="content">
-            <div class="row column">
-                <h1>{{ wp_get_the_title() }}</h1>
-                {{ wp_get_the_content() | raw }}
-            </div>
-        </section>
+        {% if flexible_content is defined %}
+            {% for content in flexible_content %}{{ content | raw }}{% endfor %}
+        {% else %}
+            <section class="content">
+                <div class="row column">
+                    <h1>{{ wp_get_the_title() }}</h1>
+                    {{ wp_get_the_content() | raw }}
+                </div>
+            </section>
+        {% endif %}
     {% endblock %}
 
     {% block cta %}

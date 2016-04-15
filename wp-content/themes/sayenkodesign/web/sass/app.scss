@@ -6,6 +6,7 @@
 @import "modules/cta";
 @import "modules/header";
 @import "modules/footer";
+@import "modules/hero-slider";
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
@@ -13,4 +14,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 h2, h3, h4, h5, h6 {
   color: $red-dark;
+}
+
+.slick-slide {
+  height: auto;
 }

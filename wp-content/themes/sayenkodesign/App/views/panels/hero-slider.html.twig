@@ -1,0 +1,22 @@
+{% if slides %}
+    <section class="hero slick slides">
+        {% for slide in slides %}
+            <div class="slide">
+                <img src="{{ slide.image.url }}" alt="">
+                <div class="content">
+                    <div class="content-center">
+                        {% if slide.title %}
+                            <h1>{{ slide.title | raw }}</h1>
+                        {% endif %}
+                        {% if slide.tagline %}
+                            <div class="tagline">{{ slide.tagline | raw }}</div>
+                        {% endif %}
+                        {% for link in slide.links if link.url and link.text %}
+                            <a href="{{ link.url }}" class="button">{{ link.text | raw }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+{% endif %}

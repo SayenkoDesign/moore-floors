@@ -7,13 +7,20 @@ use Sayenko\Script;
 // stylesheets
 $montserrat = new Stylesheet('montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,700');
 $fontawesome = new Stylesheet('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+$slick = new Stylesheet('slick', get_stylesheet_directory_uri() . '/web/stylesheets/slick.css');
+$slickTheme = new Stylesheet('slick-theme', get_stylesheet_directory_uri() . '/web/stylesheets/slick-theme.css', [
+    $slick->getHandle(),
+]);
 $stylesheet = new Stylesheet('stylesheet', get_stylesheet_directory_uri() . '/web/stylesheets/app.css', [
     $montserrat->getHandle(),
-    $fontawesome->getHandle()
+    $fontawesome->getHandle(),
+    $slickTheme->getHandle(),
 ]);
 $stylesheet->alwaysUpdate();
 $montserrat->register();
 $fontawesome->register();
+$slick->register();
+$slickTheme->register();
 $stylesheet->register();
 
 $script = new Script('script', get_stylesheet_directory_uri() . '/web/scripts-min/app.min.js');

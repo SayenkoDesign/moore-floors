@@ -14,5 +14,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "font-awesome": "^4.6.1",
+    "foundation-sites": "^6.2.1",
+    "slick-carousel": "^1.5.9"
+  }
 }

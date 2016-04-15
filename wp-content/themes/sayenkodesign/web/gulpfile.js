@@ -23,12 +23,16 @@ var options = {
     scripts: {
         src: [
             'bower_components/foundation-sites/dist/foundation.js',
+            'bower_components/slick-carousel/slick/slick.js',
             'scripts/app.js'
         ],
         dist: 'scripts-min'
     },
     styles: {
-        src: 'sass/**/*.scss',
+        src: [
+            'bower_components/slick-carousel/slick/slick.scss',
+            'bower_components/slick-carousel/slick/slick-theme.scss',
+            'sass/**/*.scss'],
         dist: 'stylesheets',
         style: 'nested',
         includePaths: [
