@@ -151,6 +151,11 @@ class WordPress extends Twig_Extension
                 return get_categories($args);
             }),
 
+            new \Twig_SimpleFunction('wp_list_categories', function ($args = []) {
+                $args['echo'] = false;
+                return wp_list_categories($args);
+            }),
+
             new \Twig_SimpleFunction('wp_get_category', function ($category, $output = OBJECT, $filter = 'raw') {
                 return get_category($category, $output, $filter);
             }),
@@ -1362,8 +1367,8 @@ class WordPress extends Twig_Extension
                 return get_month_link($year, $month);
             }),
 
-            new \Twig_SimpleFunction('wp_get_the_date', function ($format, $postID) {
-                return get_the_date($format, $postID);
+            new \Twig_SimpleFunction('wp_get_the_date', function ($d = '', $post = null) {
+                return get_the_date($d, $post);
             }),
 
             new \Twig_SimpleFunction('wp_get_the_time', function ($format, $post) {
