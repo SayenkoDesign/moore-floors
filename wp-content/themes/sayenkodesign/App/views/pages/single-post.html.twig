@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <section class="single-post">
+        <div class="row navigation">
+            <div class="large-8 large-centered columns">
+                <div class="float-left">
+                    <button class="secondary hollow dropdown button"  data-toggle="example-dropdown">Select a Category</button>
+                    <div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
+                        <ul class="vertical menu">
+                            {{ wp_list_categories({title_li: ''}) | raw }}
+                        </ul>
+                    </div>
+                </div>
+                <div class="float-right">
+                    {{ wp_get_previous_post_link('< %link', 'PREVIOUS') | raw }}
+                    {{ wp_get_next_post_link('%link >', 'NEXT') | raw }}
+                </div>
+            </div>
+        </div>
+        <div class="content row">
+            <div class="large-8 large-centered columns">
+                <div class="float-left">{{ wp_get_the_post_thumbnail() | raw }}</div>
+                <span class="post-info">
+                    {{ wp_get_the_author_meta('first_name') | raw }}
+                    {{ wp_get_the_author_meta('last_name') | raw }}
+                    |
+                    {{ wp_get_the_date('F j, Y') | raw }}
+                </span>
+                <h2>{{ get_field('subtitle') }}</h2>
+                {{ wp_get_the_content() |raw }}
+            </div>
+        </div>
+        <div class="row column social">
+            <div class="share text-center">
+                <span class='st__large' displayText=''></span>
+                <span class='st_email_large' displayText='Email'></span>
+                <span class='st_facebook_large' displayText='Facebook'></span>
+                <span class='st_linkedin_large' displayText='LinkedIn'></span>
+                <span class='st_twitter_large' displayText='Tweet'></span>
+                <span class='st_googleplus_large' displayText='Google +'></span>
+            </div>
+            <script type="text/javascript">var switchTo5x=true;</script>
+            <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+            <script type="text/javascript">stLight.options({publisher: "31abfba6-0978-4139-8479-d6e96f61d25f", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
+
+            {{ wp_comments_template() | raw }}
+        </div>
+    </section>
+{% endblock %}

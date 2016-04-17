@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <h1>Blogs</h1>
+    <section class="post">
+        {% for blog in blogs %}
+            {{ blog | raw }}
+        {% endfor %}
+    </section>
+{% endblock %}

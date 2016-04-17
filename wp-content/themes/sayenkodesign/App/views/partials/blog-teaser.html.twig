@@ -1,0 +1,11 @@
+<article class="blog-teaser">
+    {{ wp_get_the_post_thumbnail() | raw }}
+    <span class="post-info">
+        {{ wp_get_the_author_meta('first_name') | raw }}
+        {{ wp_get_the_author_meta('last_name') | raw }}
+        |
+        {{ wp_get_the_date('F j, Y') | raw }}
+    </span>
+    {{ wp_get_the_excerpt() | raw }}
+    <a href="{{ wp_get_permalink() | raw }}">Read More</a>
+</article>

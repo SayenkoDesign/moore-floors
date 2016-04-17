@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <section class="single-cases">
+        <div class="row">
+            <div class="medium-6 large-8 columns">
+                <div class="before-after">
+                    <div class="row before">
+                        <div class="large-8 columns large-push-5">
+                            <img src="{{ get_field('before_&_after')[1].before.url }}" alt="">
+                            <img src="{{ get_field('before_&_after')[2].before.url }}" alt="">
+                        </div>
+                        <div class="large-4 columns large-pull-8">
+                            <img src="{{ get_field('before_&_after')[0].before.url }}" alt="">
+                            <div class="overlay">BEFORE</div>
+                        </div>
+                    </div>
+                    <div class="row after">
+                        <div class="large-4 columns">
+                            <img src="{{ get_field('before_&_after')[0].before.url }}" alt="">
+                            <div class="overlay">AFTER</div>
+                        </div>
+                        <div class="large-8 columns">
+                            <img src="{{ get_field('before_&_after')[1].before.url }}" alt="">
+                            <img src="{{ get_field('before_&_after')[2].before.url }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="medium-6 large-4 columns">
+                <div class="description">
+                    <h3>Description</h3>
+                    {{ get_field('description') | raw }}
+                </div>
+                {% if get_field('hardwood_uses') %}
+                    <div class="description">
+                        <h3>Hardwood Uses</h3>
+                        {{ get_field('hardwood_uses') | raw }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

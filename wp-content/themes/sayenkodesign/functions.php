@@ -26,6 +26,17 @@ $stylesheet->register();
 $script = new Script('script', get_stylesheet_directory_uri() . '/web/scripts-min/app.min.js');
 $script->register();
 
+// post types
+add_action('init', function() {
+    $args = array(
+        'public' => true,
+        'has_archive' => true,
+        'label'  => 'Case Studies'
+    );
+    register_post_type( 'cases', $args );
+    flush_rewrite_rules();
+});
+
 // menus
 register_nav_menus([
     'main' => 'Main menu',
