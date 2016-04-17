@@ -85,6 +85,10 @@ add_action('admin_head', function () {
 HTML;
 });
 
+add_action( 'after_setup_theme', function () {
+    add_theme_support( 'post-thumbnails' );
+} );
+
 // login logo
 add_action('login_head', function () {
     $rootURI = get_template_directory_uri();
@@ -99,7 +103,6 @@ add_action('login_head', function () {
     </style>
 HTML;
 });
-
 
 // referral widget
 add_action('wp_dashboard_setup', function () {
