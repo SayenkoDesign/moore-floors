@@ -82,12 +82,16 @@
       padding: rem-calc(10px);
     }
     .title1, .title2 {
+      line-height:1.2;
       text-transform: uppercase;
       font-size: rem-calc(18px);
     }
     .description {
       display: none;
       font-size: rem-calc(14px);
+      p {
+        line-height:1.2;
+      }
     }
     .button {
       display: none;
