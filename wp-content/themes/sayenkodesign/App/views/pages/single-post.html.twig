@@ -1,22 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block content %}
     <section class="single-post">
-        <div class="row navigation">
-            <div class="large-8 large-centered columns">
-                <div class="float-left">
-                    <button class="secondary hollow dropdown button"  data-toggle="example-dropdown">Select a Category</button>
-                    <div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
-                        <ul class="vertical menu">
-                            {{ wp_list_categories({title_li: ''}) | raw }}
-                        </ul>
-                    </div>
-                </div>
-                <div class="float-right">
-                    {{ wp_get_previous_post_link('< %link', 'PREVIOUS') | raw }}
-                    {{ wp_get_next_post_link('%link >', 'NEXT') | raw }}
-                </div>
-            </div>
-        </div>
         <div class="content row">
             <div class="large-8 large-centered columns">
                 <div class="float-left">{{ wp_get_the_post_thumbnail() | raw }}</div>

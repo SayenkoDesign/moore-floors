@@ -1,11 +1,15 @@
-<article class="blog-teaser">
-    {{ wp_get_the_post_thumbnail() | raw }}
-    <span class="post-info">
-        {{ wp_get_the_author_meta('first_name') | raw }}
-        {{ wp_get_the_author_meta('last_name') | raw }}
-        |
-        {{ wp_get_the_date('F j, Y') | raw }}
-    </span>
-    {{ wp_get_the_excerpt() | raw }}
-    <a href="{{ wp_get_permalink() | raw }}">Read More</a>
+<article class="boxed-teaser">
+    <a href="{{ wp_get_permalink() | raw }}">
+        {{ wp_get_the_post_thumbnail() | raw }}
+        <div class="title">{{ wp_get_the_title() | raw }}</div>
+        <div class="author">
+            By
+            {{ wp_get_the_author_meta('first_name') | raw }}
+            {{ wp_get_the_author_meta('last_name') | raw }}
+            |
+            {{ wp_get_the_date('F j, Y') | raw }}
+        </div>
+        <div class="teaser">{{ wp_get_the_excerpt() | raw }}</div>
+        <div class="read-more">Read More</div>
+    </a>
 </article>

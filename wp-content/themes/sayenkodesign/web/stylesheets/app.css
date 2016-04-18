@@ -5943,6 +5943,19 @@ table.hover tr:nth-of-type(even):hover {
     margin: 0;
     font-size: 36px; }
 
+.archive-navigation {
+  margin: 3rem auto 0; }
+  .archive-navigation input[type=text] {
+    border: #e7e7e7; }
+  .archive-navigation .button[type=submit] {
+    background-color: #A97C50; }
+    .archive-navigation .button[type=submit]:hover {
+      background-color: #866340; }
+  .archive-navigation .button.hollow.secondary {
+    border-color: #e7e7e7; }
+  .archive-navigation .button::after {
+    border-color: #777 transparent transparent; }
+
 .services {
   padding-top: 2rem;
   padding-bottom: 3rem; }
@@ -6122,37 +6135,42 @@ table.hover tr:nth-of-type(even):hover {
             transform: translateY(50%)translateX(-50%);
     border-radius: 100%; }
 
-.case-studies {
+.boxed-teasers {
   padding: 2rem 0; }
 
-.case-teaser {
+.boxed-teaser {
   border: 1px solid #fbdbd8;
   padding: 0.25rem;
   margin-bottom: 1rem; }
-  .case-teaser img {
+  .boxed-teaser img {
     margin-bottom: 0.5rem; }
-  .case-teaser .title, .case-teaser .teaser, .case-teaser .read-more {
+  .boxed-teaser .title, .boxed-teaser .teaser, .boxed-teaser .read-more, .boxed-teaser .author {
     padding: 0 0.25rem; }
-  .case-teaser .title {
+  .boxed-teaser .title {
     font-size: 1.375rem;
     text-transform: none;
     margin-bottom: 1rem; }
-  .case-teaser .teaser {
+  .boxed-teaser .author {
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    color: #4a4a4a; }
+  .boxed-teaser .teaser {
     color: #4a4a4a;
     margin-bottom: 1rem;
     font-size: 0.875rem; }
-  .case-teaser .read-more {
+  .boxed-teaser .read-more {
     color: #A97C50;
     text-transform: uppercase;
     font-size: 0.875rem;
     margin-bottom: 1rem; }
-    .case-teaser .read-more::after {
+    .boxed-teaser .read-more::after {
       content: " >";
       position: relative;
       top: 1.5px; }
-  .case-teaser:hover img {
+  .boxed-teaser:hover img {
     opacity: 0.5; }
-  .case-teaser:hover .title {
+  .boxed-teaser:hover .title {
     color: #A97C50; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -6224,3 +6242,6 @@ blockquote {
   @media screen and (min-width: 40em) {
     .accordion {
       margin-bottom: 0; } }
+
+.pagination {
+  margin-top: 3rem; }

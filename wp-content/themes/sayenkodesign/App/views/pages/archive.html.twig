@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    {% include 'partials/archive-navigation.html.twig' %}
+    {% if not archives %}
+        <div class="boxed-teasers">
+            <div class="row column">
+                <h1>No Results Found</h1>
+            </div>
+        </div>
+    {% else %}
+        <section class="boxed-teasers">
+            <div class="row small-up-1 medium-up-2 large-up-4">
+                {% for archive in archives %}
+                    <div class="column">
+                        {{ archive | raw }}
+                    </div>
+                {% endfor %}
+            </div>
+            {% include 'panels/pagination.html.twig' %}
+        </section>
+    {% endif %}
+{% endblock %}

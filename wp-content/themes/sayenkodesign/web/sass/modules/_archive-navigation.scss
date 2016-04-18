@@ -1,0 +1,18 @@
+.archive-navigation {
+  margin: $global-margin*3 auto 0;
+  input[type=text] {
+    border: #e7e7e7;
+  }
+  .button[type=submit] {
+    background-color: $brown;
+    &:hover {
+      background-color: darken($brown, 10%);
+    }
+  }
+  .button.hollow.secondary {
+    border-color: #e7e7e7;
+  }
+  .button::after {
+    border-color: $secondary-color transparent transparent;
+  }
+}

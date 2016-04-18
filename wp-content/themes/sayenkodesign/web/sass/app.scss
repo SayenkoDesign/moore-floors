@@ -8,11 +8,12 @@
 @import "modules/footer";
 @import "modules/hero-slider";
 @import "modules/hero-title";
+@import "modules/archive-navigation";
 @import "modules/services";
 @import "modules/why";
 @import "modules/generic-content";
 @import "modules/testimonial";
-@import "modules/case-teaser";
+@import "modules/boxed-teaser";
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
@@ -98,4 +99,8 @@ blockquote {
   @include breakpoint(medium) {
     margin-bottom: 0;
   }
+}
+
+.pagination {
+  margin-top: $global-margin * 3;
 }

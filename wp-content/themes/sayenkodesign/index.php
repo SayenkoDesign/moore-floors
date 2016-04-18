@@ -3,7 +3,54 @@ require_once __DIR__.'/App/bootstrap.php';
 
 $twig = $container->get("twig.environment");
 $data = [];
-if(is_page() || get_page_template_slug() == 'page-templates/home.php') {
+
+// cases
+if (is_post_type_archive('cases')) {
+    $template = 'pages/archive.html.twig';
+    $data['title'] = 'Case Studies';
+
+    $data['archives'] = [];
+    while(have_posts()) {
+        the_post();
+        $data['archives'][] = $twig->render('partials/cases-teaser.html.twig', []);
+    }
+    wp_reset_postdata();
+    the_post();
+}
+// blogs, blog archives, search
+else if(is_home() || is_archive() || is_search()) {
+    $template = 'pages/archive.html.twig';
+    if(is_archive()) {
+        $data['title'] = get_the_archive_title();
+    } else if (is_search()) {
+        $data['title'] = "Search Results";
+    } else {
+        $data['title'] = 'Blogs';
+    }
+
+    $data['archives'] = [];
+    while(have_posts()) {
+        the_post();
+        $data['archives'][] = $twig->render('partials/blog-teaser.html.twig', []);
+    }
+    wp_reset_postdata();
+    the_post();
+}
+// search
+else if(is_search()) {
+    $template = 'pages/archive.html.twig';
+    $data['title'] = "Search Results";
+
+    $data['archives'] = [];
+    while(have_posts()) {
+        the_post();
+        $data['archives'][] = $twig->render('partials/blog-teaser.html.twig', []);
+    }
+    wp_reset_postdata();
+    the_post();
+}
+// home page
+else if(is_page() || get_page_template_slug() == 'page-templates/home.php') {
     $template = 'base.html.twig';
     $flexibleContent = [];
     while (have_rows('content')) {
@@ -64,7 +111,9 @@ if(is_page() || get_page_template_slug() == 'page-templates/home.php') {
     if(is_front_page()) {
         $data['hero_title'] = false;
     }
-} else {
+}
+// everything else
+else {
     $template = 'base.html.twig';
 }
 

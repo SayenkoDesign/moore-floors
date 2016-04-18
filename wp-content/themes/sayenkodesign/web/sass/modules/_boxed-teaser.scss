@@ -1,20 +1,26 @@
-.case-studies {
+.boxed-teasers {
   padding: $global-padding*2 0;
 }
-.case-teaser {
+.boxed-teaser {
   border: 1px solid #fbdbd8;
   padding: $global-padding/4;
   margin-bottom: $global-margin;
   img {
     margin-bottom: $global-margin/2;
   }
-  .title, .teaser, .read-more {
+  .title, .teaser, .read-more, .author {
     padding: 0 $global-padding/4;
   }
   .title {
     font-size: rem-calc(22px);
     text-transform: none;
     margin-bottom: $global-margin;
+  }
+  .author {
+    margin-top: $global-margin/2*-1;
+    margin-bottom:$global-margin/2;
+    font-size: rem-calc(12px);
+    color: $body-font-color;
   }
   .teaser {
     color: $body-font-color;
