@@ -1,25 +1,40 @@
 {% extends 'base.html.twig' %}
+{% set hero_title = false %}
 {% block content %}
-    <section class="single-cases">
+    <section class="hero-title">
+        <div class="row column">
+            <h1>{{ wp_get_the_title() | raw }}</h1>
+            <div class="hero-navigation">
+                {{ wp_get_previous_post_link('%link', '<i class="fa fa-fw fa-angle-left"></i>') | raw }}
+                {{ wp_get_next_post_link('%link', '<i class="fa fa-fw fa-angle-right"></i>') | raw }}
+            </div>
+        </div>
+    </section>
+
+    <section class="single-cases-content">
         <div class="row">
             <div class="medium-6 large-8 columns">
                 <div class="before-after">
                     <div class="row before">
-                        <div class="large-8 columns large-push-5">
+                        <div class="large-8 columns large-push-4">
+                            <div class="container">
+                                <img src="{{ get_field('before_&_after')[0].before.url }}" alt="">
+                                <div class="overlay">BEFORE</div>
+                            </div>
+                        </div>
+                        <div class="large-4 columns large-pull-8">
                             <img src="{{ get_field('before_&_after')[1].before.url }}" alt="">
                             <img src="{{ get_field('before_&_after')[2].before.url }}" alt="">
                         </div>
-                        <div class="large-4 columns large-pull-8">
-                            <img src="{{ get_field('before_&_after')[0].before.url }}" alt="">
-                            <div class="overlay">BEFORE</div>
-                        </div>
                     </div>
                     <div class="row after">
-                        <div class="large-4 columns">
-                            <img src="{{ get_field('before_&_after')[0].before.url }}" alt="">
-                            <div class="overlay">AFTER</div>
-                        </div>
                         <div class="large-8 columns">
+                            <div class="container">
+                                <img src="{{ get_field('before_&_after')[0].before.url }}" alt="">
+                                <div class="overlay">AFTER</div>
+                            </div>
+                        </div>
+                        <div class="large-4 columns">
                             <img src="{{ get_field('before_&_after')[1].before.url }}" alt="">
                             <img src="{{ get_field('before_&_after')[2].before.url }}" alt="">
                         </div>
@@ -36,6 +51,13 @@
                         <h3>Hardwood Uses</h3>
                         {{ get_field('hardwood_uses') | raw }}
                     </div>
+                {% endif %}
+                {% if get_field('testimonial') %}
+                    {% include 'partials/testimonial.html.twig' with {
+                        background: get_field('testimonial')[0].image,
+                        testimonial_quote: get_field('testimonial')[0].content,
+                        testimonial_author: get_field('testimonial')[0].name
+                    } %}
                 {% endif %}
             </div>
         </div>

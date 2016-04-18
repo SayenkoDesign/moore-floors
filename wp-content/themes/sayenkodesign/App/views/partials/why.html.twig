@@ -16,13 +16,7 @@
             {{ accordion | raw }}
         </div>
         <div class="{% if wp_is_front_page() %}medium-6{% else %}medium-4{% endif %} columns">
-            <blockquote class="testimonial {% if not wp_is_front_page() %}block{% endif %}">
-                {% if not wp_is_front_page() %}
-                    <img src="{{ background.url }}" alt="">
-                {% endif %}
-                {{ testimonial_quote | raw }}
-                <cite>{{ testimonial_author | raw  }}</cite>
-            </blockquote>
+            {% include 'partials/testimonial.html.twig' %}
         </div>
     </div>
 </section>

@@ -1,0 +1,36 @@
+.single-cases-content {
+  padding: $global-padding*3 0;
+  h1, h2, h3, h4, h5, h6  {
+    color: $body-font-color;
+  }
+  .before-after {
+    > div:first-of-type {
+      margin-bottom: $global-padding*2;
+    }
+    img {
+      width: 100%;
+    }
+    .large-4 {
+      img:first-of-type {
+        margin-bottom: $global-padding * 2;
+      }
+    }
+    .container {
+      position: relative;
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: $global-padding;
+        background-color: rgba(0,0,0,0.5);
+        color: $white;
+      }
+      @include breakpoint(small only) {
+          margin-bottom: $global-padding * 2;
+      }
+    }
+  }
+  .testimonial {
+    margin-top: $global-margin*6;
+  }
+}

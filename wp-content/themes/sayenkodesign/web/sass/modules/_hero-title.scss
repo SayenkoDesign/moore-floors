@@ -9,4 +9,20 @@
     margin: 0;
     font-size: 36px;
   }
+  .hero-navigation {
+    a {
+      display: inline-block;
+      color: $white;
+      border: 2px solid $white;
+      padding: $global-padding/8;
+      line-height: 1;
+      font-size: rem-calc(40px);
+      border-radius: 4px;
+      margin: $global-margin $global-margin/2;
+      &:hover {
+        color: $brown-light;
+        border-color: $brown-light;
+      }
+    }
+  }
 }
