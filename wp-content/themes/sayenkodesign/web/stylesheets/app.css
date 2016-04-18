@@ -5,6 +5,7 @@
  */
 /* FONT PATH
  * -------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @font-face {
   font-family: 'FontAwesome';
   src: url("../fonts/fontawesome-webfont.eot?v=4.6.1");
@@ -2547,7 +2548,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #4a4a4a;
@@ -3380,7 +3381,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #BC0606;
@@ -6096,7 +6097,7 @@ blockquote {
     padding-right: 0;
     background-color: transparent; }
   .accordion .accordion-title {
-    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
     border: none;
     margin-top: 1.5rem;
     padding: 0 0 0 1.25rem;

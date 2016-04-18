@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 // colors
 // ------
 $red: #BC0606;// links and large red headings
@@ -22,6 +24,8 @@ $foundation-palette: (
 // fonts
 $body-font-color: $gray-font;
 $header-color: $red;
+$body-font-family: 'Montserrat', sans-serif;
+$header-font-family: 'Montserrat', sans-serif;
 
 $header-sizes: (
   'h1': 36,
