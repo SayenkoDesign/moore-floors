@@ -29,12 +29,7 @@
         </div>
     </div>
     <div class="row bottom">
-        <div class="large-8 columns">
-            <div class="copyright">
-                {{ get_field('copyright_content', 'option') | raw }}
-            </div>
-        </div>
-        <div class="large-4 columns">
+        <div class="large-4 large-push-8 columns">
             <div class="social">
                 {% if get_field('google_plus', 'option') %}
                     <a href="{{ get_field('google_plus', 'option') }}" target="_blank" class="fa fa-fw fa-google-plus"></a>
@@ -54,6 +49,11 @@
                 {% if get_field('facebook', 'option') %}
                     <a href="{{ get_field('facebook', 'option') }}" target="_blank" class="fa fa-fw fa-facebook"></a>
                 {% endif %}
+            </div>
+        </div>
+        <div class="large-8 large-pull-4 columns">
+            <div class="copyright">
+                {{ get_field('copyright_content', 'option') | raw }}
             </div>
         </div>
     </div>

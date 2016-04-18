@@ -3,12 +3,19 @@
   padding: $global-padding * 2 0;
   .top {
     margin-bottom: $global-margin*2;
+    text-align: center;
+    @include breakpoint(large) {
+      text-align: left;
+    }
   }
   .images {
     margin-bottom: $global-margin*2;
     img {
       display: block;
-      margin: 0 auto $global-margin;
+      margin: 0 auto $global-margin*2;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
       @include breakpoint(medium) {
         display: inline;
         padding: 0 1rem;
@@ -27,11 +34,15 @@
   }
   .bottom {
     color: $red;
+    text-align: center;
     a {
       color: $brown;
       &:hover {
         color: lighten($brown, 10%);
       }
+    }
+    @include breakpoint(large) {
+      text-align: left;
     }
   }
   h4 {
@@ -58,6 +69,7 @@
     }
   }
   .social {
+    margin-bottom: $global-margin;
     .fa {
       @include button-style($brown, lighten($brown, 10%), $tan-dark);
       width: rem-calc(40px);
@@ -65,6 +77,7 @@
     }
     @include breakpoint(large) {
       float: right;
+      margin-bottom: 0;
     }
   }
   @include breakpoint(medium only) {

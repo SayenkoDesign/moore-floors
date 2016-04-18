@@ -5878,12 +5878,18 @@ table.hover tr:nth-of-type(even):hover {
   background-color: #d3d3bb;
   padding: 2rem 0; }
   .footer .top {
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    text-align: center; }
+    @media screen and (min-width: 64em) {
+      .footer .top {
+        text-align: left; } }
   .footer .images {
     margin-bottom: 2rem; }
     .footer .images img {
       display: block;
-      margin: 0 auto 1rem; }
+      margin: 0 auto 2rem; }
+      .footer .images img:last-of-type {
+        margin-bottom: 0; }
       @media screen and (min-width: 40em) {
         .footer .images img {
           display: inline;
@@ -5898,11 +5904,15 @@ table.hover tr:nth-of-type(even):hover {
       .footer .images {
         margin-bottom: 0; } }
   .footer .bottom {
-    color: #BC0606; }
+    color: #BC0606;
+    text-align: center; }
     .footer .bottom a {
       color: #A97C50; }
       .footer .bottom a:hover {
         color: #bc9670; }
+    @media screen and (min-width: 64em) {
+      .footer .bottom {
+        text-align: left; } }
   .footer h4 {
     margin: 0; }
     @media screen and (min-width: 64em) {
@@ -5920,17 +5930,20 @@ table.hover tr:nth-of-type(even):hover {
     @media screen and (min-width: 64em) {
       .footer .copyright {
         margin: 0.6rem 0 0 0; } }
-  .footer .social .fa {
-    background-color: #A97C50;
-    color: #d3d3bb;
-    width: 2.5rem;
-    padding: 0.75rem 0; }
-    .footer .social .fa:hover, .footer .social .fa:focus {
-      background-color: #bc9670;
-      color: #d3d3bb; }
-  @media screen and (min-width: 64em) {
-    .footer .social {
-      float: right; } }
+  .footer .social {
+    margin-bottom: 1rem; }
+    .footer .social .fa {
+      background-color: #A97C50;
+      color: #d3d3bb;
+      width: 2.5rem;
+      padding: 0.75rem 0; }
+      .footer .social .fa:hover, .footer .social .fa:focus {
+        background-color: #bc9670;
+        color: #d3d3bb; }
+    @media screen and (min-width: 64em) {
+      .footer .social {
+        float: right;
+        margin-bottom: 0; } }
   @media screen and (min-width: 40em) and (max-width: 63.9375em) {
     .footer {
       text-align: center; } }
