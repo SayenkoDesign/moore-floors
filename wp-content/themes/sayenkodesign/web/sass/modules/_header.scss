@@ -1,5 +1,10 @@
 .header {
   background-color: $white;
+
+  .hide-for-small-only {
+    position: relative;
+  }
+
   #primary-mobile-navigation {
     background-color: $tan-dark;
     .dropdown.menu {
