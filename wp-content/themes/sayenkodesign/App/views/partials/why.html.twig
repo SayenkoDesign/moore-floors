@@ -1,5 +1,7 @@
 <section class="why">
-    <div class="background"><img src="{{ background.url }}" alt=""></div>
+    {% if wp_is_front_page() %}
+        <div class="background"><img src="{{ background.url }}" alt=""></div>
+    {% endif %}
     <div class="row column">
         <div class="title">
             <img src="{{ icon.url }}" alt="">
@@ -10,11 +12,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="medium-6 columns">
+        <div class="{% if wp_is_front_page() %}medium-6{% else %}medium-8{% endif %} columns">
             {{ accordion | raw }}
         </div>
-        <div class="medium-6 columns">
-            <blockquote class="testimonial">
+        <div class="{% if wp_is_front_page() %}medium-6{% else %}medium-4{% endif %} columns">
+            <blockquote class="testimonial {% if not wp_is_front_page() %}block{% endif %}">
+                {% if not wp_is_front_page() %}
+                    <img src="{{ background.url }}" alt="">
+                {% endif %}
                 {{ testimonial_quote | raw }}
                 <cite>{{ testimonial_author | raw  }}</cite>
             </blockquote>

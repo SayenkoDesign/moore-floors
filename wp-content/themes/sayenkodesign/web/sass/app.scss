@@ -11,6 +11,7 @@
 @import "modules/services";
 @import "modules/why";
 @import "modules/generic-content";
+@import "modules/testimonial";
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
@@ -37,10 +38,12 @@ blockquote {
   p {
     color: $body-font-color;
     font-size: rem-calc(20px);
+    font-style: italic;
   }
   cite {
     font-size: rem-calc(20px);
     color: $brown-light;
+    font-style: normal;
   }
 }
 

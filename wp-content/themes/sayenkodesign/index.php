@@ -41,9 +41,9 @@ if(is_page() || get_page_template_slug() == 'page-templates/home.php') {
                     'title_1' => get_sub_field('title_line_1'),
                     'title_2' => get_sub_field('title_line_2'),
                     'accordion' => $accordion,
-                    'testimonial_quote' => get_sub_field('testimony_text'),
-                    'testimonial_author' => get_sub_field('testimony_author'),
-                    'background' => get_sub_field('background_image'),
+                    'testimonial_quote' => get_sub_field('testimonial')[0]['content'],
+                    'testimonial_author' => get_sub_field('testimonial')[0]['name'],
+                    'background' => get_sub_field('testimonial')[0]['image'],
                 ];
                 $flexibleContent[] = $twig->render('partials/why.html.twig', $data);
                 break;

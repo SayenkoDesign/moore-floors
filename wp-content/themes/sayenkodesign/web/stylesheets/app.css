@@ -6088,13 +6088,38 @@ table.hover tr:nth-of-type(even):hover {
     @media screen and (min-width: 40em) {
       .why .title {
         text-align: left; } }
-  .why blockquote {
-    max-width: 340px; }
 
 .generic-content {
   padding: 2rem 0; }
   .generic-content h1, .generic-content h2, .generic-content h3, .generic-content h4, .generic-content h5, .generic-content h6 {
     color: #4a4a4a; }
+
+.testimonial {
+  max-width: 340px; }
+  .testimonial p::before {
+    content: '"';
+    font-style: normal;
+    color: #b4916b;
+    font-size: 100px;
+    line-height: 0;
+    vertical-align: bottom;
+    padding-right: 0.5rem; }
+
+.block.testimonial {
+  position: relative;
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  max-width: none;
+  background-color: #fefefe;
+  border: 1px solid #d9d9c6; }
+  .block.testimonial img {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    -webkit-transform: translateY(50%)translateX(-50%);
+        -ms-transform: translateY(50%)translateX(-50%);
+            transform: translateY(50%)translateX(-50%);
+    border-radius: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
@@ -6117,10 +6142,12 @@ blockquote {
   padding: 0; }
   blockquote p {
     color: #4a4a4a;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    font-style: italic; }
   blockquote cite {
     font-size: 1.25rem;
-    color: #b4916b; }
+    color: #b4916b;
+    font-style: normal; }
 
 .slick-slide {
   height: auto; }

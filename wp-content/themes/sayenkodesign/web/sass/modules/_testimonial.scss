@@ -1,0 +1,27 @@
+.testimonial {
+  max-width: 340px;
+  p::before {
+    content: '"';
+    font-style: normal;
+    color: $brown-light;
+    font-size: 100px;
+    line-height: 0;
+    vertical-align: bottom;
+    padding-right: 0.5rem;
+  }
+}
+.block.testimonial {
+  position: relative;
+  text-align: center;
+  padding: $global-padding*4 $global-padding $global-padding*2;
+  max-width: none;
+  background-color: $white;
+  border: 1px solid #d9d9c6;
+  img {
+    position: absolute;
+    bottom: 100%;
+    left:50%;
+    transform: translateY(50%)+translateX(-50%);
+    border-radius: 100%;
+  }
+}
