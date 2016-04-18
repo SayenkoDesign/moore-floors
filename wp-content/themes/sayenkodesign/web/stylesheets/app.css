@@ -5771,14 +5771,11 @@ table.hover tr:nth-of-type(even):hover {
 
 .cta {
   background: -moz-linear-gradient(left, #926453 50%, #83290E 50%);
-  background: -webkit-gradient(linear, left top, right top, from(#926453), color-stop(0.5, #926453), color-stop(0.5, #83290E)); }
+  background: -webkit-gradient(linear, left top, right top, from(#926453), color-stop(0.5, #926453), color-stop(0.5, #83290E));
+  text-align: center; }
   .cta a {
-    display: block;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%); }
+    display: inline-block;
+    position: relative; }
   .cta .columns {
     padding-top: 1rem;
     padding-bottom: 1rem; }
@@ -5788,6 +5785,9 @@ table.hover tr:nth-of-type(even):hover {
     background-color: #A74021; }
   .cta .call {
     background-color: #83290E; }
+  @media screen and (min-width: 40em) {
+    .cta {
+      text-align: left; } }
 
 .header {
   background-color: #fefefe; }
