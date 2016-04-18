@@ -6091,6 +6091,11 @@ table.hover tr:nth-of-type(even):hover {
   .why blockquote {
     max-width: 340px; }
 
+.generic-content {
+  padding: 2rem 0; }
+  .generic-content h1, .generic-content h2, .generic-content h3, .generic-content h4, .generic-content h5, .generic-content h6 {
+    color: #4a4a4a; }
+
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: bold; }

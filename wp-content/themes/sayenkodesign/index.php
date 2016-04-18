@@ -47,6 +47,12 @@ if(is_page() || get_page_template_slug() == 'page-templates/home.php') {
                 ];
                 $flexibleContent[] = $twig->render('partials/why.html.twig', $data);
                 break;
+            case 'generic_content':
+                $data = [
+                    'content' => get_sub_field('content'),
+                ];
+                $flexibleContent[] = $twig->render('partials/generic.html.twig', $data);
+                break;
             default:
                 throw new \Exception("Template does not support a layout for $layout");
                 break;
