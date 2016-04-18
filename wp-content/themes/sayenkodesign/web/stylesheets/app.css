@@ -5931,6 +5931,16 @@ table.hover tr:nth-of-type(even):hover {
     background-color: transparent;
     border: 2px solid #fefefe; }
 
+.hero-title {
+  background-image: url("../images/header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 6rem 0; }
+  .hero-title h1 {
+    color: #FFF;
+    margin: 0;
+    font-size: 36px; }
+
 .services {
   padding-bottom: 3rem; }
   .services .columns {

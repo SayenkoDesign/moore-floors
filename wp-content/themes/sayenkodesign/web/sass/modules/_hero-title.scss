@@ -1,0 +1,11 @@
+.hero-title {
+  background-image: url("../images/header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: $global-margin * 6 0;
+  h1 {
+    color: #FFF;
+    margin: 0;
+    font-size: 36px;
+  }
+}

@@ -19,13 +19,20 @@
         {% include "layout/header.html.twig" %}
     {% endblock %}
 
+    {% if hero_title is not defined or hero_title == true %}
+        <section class="hero-title">
+            <div class="row column">
+                <h1>{{ wp_get_the_title() }}</h1>
+            </div>
+        </section>
+    {% endif %}
+
     {% block content %}
         {% if flexible_content is defined %}
             {% for content in flexible_content %}{{ content | raw }}{% endfor %}
         {% else %}
             <section class="content">
                 <div class="row column">
-                    <h1>{{ wp_get_the_title() }}</h1>
                     {{ wp_get_the_content() | raw }}
                 </div>
             </section>
