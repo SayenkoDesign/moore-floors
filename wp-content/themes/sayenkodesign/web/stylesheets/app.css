@@ -5734,6 +5734,41 @@ table.hover tr:nth-of-type(even):hover {
 .tan-background {
   background-color: #eaeae5; }
 
+.comment-respond {
+  margin: 3rem 0; }
+  .comment-respond h3 {
+    text-align: center;
+    color: #BC0606; }
+  .comment-respond .comment-notes {
+    display: none; }
+  .comment-respond input[type=submit] {
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: 0.85em 1em;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    background-color: #BC0606;
+    color: #fefefe;
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin: 0 auto;
+    display: block;
+    width: auto; }
+    [data-whatinput='mouse'] .comment-respond input[type=submit] {
+      outline: 0; }
+    .comment-respond input[type=submit]:hover, .comment-respond input[type=submit]:focus {
+      background-color: #a00505;
+      color: #fefefe; }
+
 .cta {
   background: -moz-linear-gradient(left, #926453 50%, #83290E 50%);
   background: -webkit-gradient(linear, left top, right top, from(#926453), color-stop(0.5, #926453), color-stop(0.5, #83290E)); }
@@ -5952,9 +5987,24 @@ table.hover tr:nth-of-type(even):hover {
     .archive-navigation .button[type=submit]:hover {
       background-color: #866340; }
   .archive-navigation .button.hollow.secondary {
-    border-color: #e7e7e7; }
+    border-color: #e7e7e7;
+    width: 100%; }
+    @media screen and (min-width: 40em) {
+      .archive-navigation .button.hollow.secondary {
+        width: auto; } }
   .archive-navigation .button::after {
     border-color: #777 transparent transparent; }
+  .archive-navigation .prev-next {
+    color: #BC0606;
+    text-align: center; }
+    .archive-navigation .prev-next .dropdown.button {
+      width: 100%; }
+    .archive-navigation .prev-next a:last-of-type {
+      margin-left: 2rem; }
+    @media screen and (min-width: 40em) {
+      .archive-navigation .prev-next {
+        text-align: left;
+        float: right; } }
 
 .services {
   padding-top: 2rem;
@@ -6172,6 +6222,22 @@ table.hover tr:nth-of-type(even):hover {
     opacity: 0.5; }
   .boxed-teaser:hover .title {
     color: #A97C50; }
+
+.single-post-content {
+  margin: 3rem 0; }
+  .single-post-content .float-left {
+    margin: 0 1rem 1rem 0; }
+    @media screen and (max-width: 39.9375em) {
+      .single-post-content .float-left {
+        float: none !important;
+        text-align: center; }
+        .single-post-content .float-left img {
+          margin-bottom: 1rem; } }
+  .single-post-content .post-info {
+    color: #BC0606;
+    font-size: 0.875rem; }
+  .single-post-content .title {
+    color: #BC0606; }
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;

@@ -3,6 +3,7 @@
 @import "foundation";
 @include foundation-everything();
 @import "classes";
+@import "modules/comment-respond";
 @import "modules/cta";
 @import "modules/header";
 @import "modules/footer";
@@ -14,6 +15,7 @@
 @import "modules/generic-content";
 @import "modules/testimonial";
 @import "modules/boxed-teaser";
+@import "modules/single-post";
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;

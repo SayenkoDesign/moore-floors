@@ -1,33 +1,35 @@
 {% extends 'base.html.twig' %}
 {% block content %}
-    <section class="single-post">
+    {% include 'partials/archive-navigation.html.twig' %}
+    <section class="single-post-content">
         <div class="content row">
             <div class="large-8 large-centered columns">
                 <div class="float-left">{{ wp_get_the_post_thumbnail() | raw }}</div>
                 <span class="post-info">
+                    By
                     {{ wp_get_the_author_meta('first_name') | raw }}
                     {{ wp_get_the_author_meta('last_name') | raw }}
                     |
                     {{ wp_get_the_date('F j, Y') | raw }}
                 </span>
-                <h2>{{ get_field('subtitle') }}</h2>
+                <h2 class="title">{{ get_field('subtitle') }}</h2>
                 {{ wp_get_the_content() |raw }}
             </div>
         </div>
-        <div class="row column social">
-            <div class="share text-center">
-                <span class='st__large' displayText=''></span>
-                <span class='st_email_large' displayText='Email'></span>
-                <span class='st_facebook_large' displayText='Facebook'></span>
-                <span class='st_linkedin_large' displayText='LinkedIn'></span>
-                <span class='st_twitter_large' displayText='Tweet'></span>
-                <span class='st_googleplus_large' displayText='Google +'></span>
-            </div>
-            <script type="text/javascript">var switchTo5x=true;</script>
-            <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-            <script type="text/javascript">stLight.options({publisher: "31abfba6-0978-4139-8479-d6e96f61d25f", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
-
-            {{ wp_comments_template() | raw }}
+    </section>
+    <section class="row column social">
+        <div class="share text-center">
+            <span class='st__large' displayText=''></span>
+            <span class='st_email_large' displayText='Email'></span>
+            <span class='st_facebook_large' displayText='Facebook'></span>
+            <span class='st_linkedin_large' displayText='LinkedIn'></span>
+            <span class='st_twitter_large' displayText='Tweet'></span>
+            <span class='st_googleplus_large' displayText='Google +'></span>
         </div>
+        <script type="text/javascript">var switchTo5x=true;</script>
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher: "31abfba6-0978-4139-8479-d6e96f61d25f", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
+
+        {{ wp_comment_form({'title_reply': 'Leave a Comment', 'label_submit': 'SUBMIT'}) | raw }}
     </section>
 {% endblock %}

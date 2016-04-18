@@ -1,0 +1,16 @@
+.comment-respond {
+  margin: $global-padding * 3 0;
+  h3 {
+    text-align: center;
+    color: $red;
+  }
+  .comment-notes {
+    display: none;
+  }
+  input[type=submit] {
+    @include button($primary-color);
+    margin: 0 auto;
+    display: block;
+    width: auto;
+  }
+}

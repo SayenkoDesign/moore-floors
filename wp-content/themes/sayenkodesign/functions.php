@@ -82,6 +82,24 @@ if (function_exists('acf_add_options_page')) {
     ]);
 }
 
+// control field order and remove uri field
+add_filter( 'comment_form_fields', function ( $fields ) {
+    $commenter = wp_get_current_commenter();
+
+    $fields['comment'] = '<div class="row column"><textarea placeholder="Your Comment" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></div>';
+    $fields['author'] = '<div class="row">'
+        . '<div class="medium-6 columns">'
+        . '<input placeholder="Name" name="author" type="text" aria-required="true" required="required" value="'.esc_attr( $commenter['comment_author'] ).'"/>'
+        . '</div>';
+    $fields['email'] = '<div class="medium-6 columns">'
+        . '<input name="email" placeholder="Email" type="text" aria-required="true" required="required" value="'.esc_attr( $commenter['comment_author_email'] ).'"/>'
+        . '</div>'
+        . '</div>';
+
+    unset($fields['url']);
+    return $fields;
+});
+
 // logo for ACF options page
 add_action('admin_head', function () {
     $rootURI = get_template_directory_uri();

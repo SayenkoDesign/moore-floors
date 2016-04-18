@@ -11,8 +11,26 @@
   }
   .button.hollow.secondary {
     border-color: #e7e7e7;
+    width: 100%;
+    @include breakpoint(medium) {
+      width: auto;
+    }
   }
   .button::after {
     border-color: $secondary-color transparent transparent;
+  }
+  .prev-next {
+    color: $red;
+    text-align: center;
+    .dropdown.button {
+      width: 100%;
+    }
+    a:last-of-type {
+      margin-left: $global-padding*2;
+    }
+    @include breakpoint(medium) {
+      text-align: left;
+      float: right;
+    }
   }
 }
