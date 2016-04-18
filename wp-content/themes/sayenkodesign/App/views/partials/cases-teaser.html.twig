@@ -1,6 +1,8 @@
 <article class="case-teaser">
-    {{ wp_get_the_post_thumbnail() | raw }}
-    {{ wp_get_the_title() }}
-    {{ wp_get_the_excerpt() | raw }}
-    <a href="{{ wp_get_permalink() | raw }}">Read More</a>
+    <a href="{{ wp_get_permalink() | raw }}">
+        {{ wp_get_the_post_thumbnail() | raw }}
+        <div class="title">{{ wp_get_the_title() | raw }}</div>
+        <div class="teaser">{{ wp_get_the_excerpt() | raw }}</div>
+        <div class="read-more">Read More</div>
+    </a>
 </article>

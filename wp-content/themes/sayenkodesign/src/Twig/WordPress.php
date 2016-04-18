@@ -552,6 +552,11 @@ class WordPress extends Twig_Extension
                 return get_query_var($var, $default);
             }),
 
+            new \Twig_SimpleFunction('wp_max_pages', function () {
+                global $wp_query;
+                return $wp_query->max_num_pages;
+            }),
+
             new \Twig_SimpleFunction('wp_home_url', function ($path = '', $scheme = null) {
                 return home_url($path, $scheme);
             }),

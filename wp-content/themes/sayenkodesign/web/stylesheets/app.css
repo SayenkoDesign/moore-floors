@@ -4960,7 +4960,7 @@ body {
         display: inline-block; } }
   .pagination a,
   .pagination button {
-    color: #0a0a0a;
+    color: #999999;
     display: block;
     padding: 0.1875rem 0.625rem;
     border-radius: 0; }
@@ -4969,7 +4969,7 @@ body {
       background: #e6e6e6; }
   .pagination .current {
     padding: 0.1875rem 0.625rem;
-    background: #BC0606;
+    background: #A97C50;
     color: #fefefe;
     cursor: default; }
   .pagination .disabled {
@@ -5936,7 +5936,8 @@ table.hover tr:nth-of-type(even):hover {
   background-image: url("../images/header.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 6rem 0; }
+  padding: 6rem 0;
+  text-align: center; }
   .hero-title h1 {
     color: #FFF;
     margin: 0;
@@ -6120,6 +6121,37 @@ table.hover tr:nth-of-type(even):hover {
         -ms-transform: translateY(50%)translateX(-50%);
             transform: translateY(50%)translateX(-50%);
     border-radius: 100%; }
+
+.case-studies {
+  padding: 2rem 0; }
+
+.case-teaser {
+  border: 1px solid #fbdbd8;
+  padding: 0.25rem;
+  margin-bottom: 1rem; }
+  .case-teaser img {
+    margin-bottom: 0.5rem; }
+  .case-teaser .title {
+    font-size: 1.125rem;
+    text-transform: none;
+    margin-bottom: 1rem; }
+  .case-teaser .teaser {
+    color: #4a4a4a;
+    margin-bottom: 1rem;
+    font-size: 0.875rem; }
+  .case-teaser .read-more {
+    color: #A97C50;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    margin-bottom: 1rem; }
+    .case-teaser .read-more::after {
+      content: " >";
+      position: relative;
+      top: 1.5px; }
+  .case-teaser:hover img {
+    opacity: 0.8; }
+  .case-teaser:hover .title {
+    color: #A97C50; }
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;

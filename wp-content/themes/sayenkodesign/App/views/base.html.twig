@@ -22,7 +22,11 @@
     {% if hero_title is not defined or hero_title == true %}
         <section class="hero-title">
             <div class="row column">
-                <h1>{{ wp_get_the_title() }}</h1>
+                {% if title is defined %}
+                    <h1>{{ title | raw }}</h1>
+                {% else %}
+                    <h1>{{ wp_get_the_title() | raw }}</h1>
+                {% endif %}
             </div>
         </section>
     {% endif %}

@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
+{% set title = 'Case Studies' %}
 {% block content %}
-    <h1>Blogs</h1>
-    <section class="case">
-        <div class="row column">
+    <section class="case-studies">
+        <div class="row small-up-1 medium-up-2 large-up-4">
             {% for case in cases %}
-                {{ case | raw }}
+                <div class="column">
+                    {{ case | raw }}
+                </div>
             {% endfor %}
         </div>
+        {% include 'panels/pagination.html.twig' %}
     </section>
 {% endblock %}

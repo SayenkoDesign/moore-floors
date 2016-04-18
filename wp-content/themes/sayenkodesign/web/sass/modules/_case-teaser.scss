@@ -1,0 +1,40 @@
+.case-studies {
+  padding: $global-padding*2 0;
+}
+.case-teaser {
+  border: 1px solid #fbdbd8;
+  padding: $global-padding/4;
+  margin-bottom: $global-margin;
+  img {
+    margin-bottom: $global-margin/2;
+  }
+  .title {
+    font-size: rem-calc(18px);
+    text-transform: none;
+    margin-bottom: $global-margin;
+  }
+  .teaser {
+    color: $body-font-color;
+    margin-bottom: $global-margin;
+    font-size: rem-calc(14px);
+  }
+  .read-more {
+    color: $brown;
+    text-transform: uppercase;
+    font-size: rem-calc(14px);
+    margin-bottom: $global-margin;
+    &::after {
+      content: " >";
+      position: relative;
+      top: 1.5px;
+    }
+  }
+  &:hover {
+    img {
+      opacity: 0.8;
+    }
+    .title {
+      color: $brown;
+    }
+  }
+}

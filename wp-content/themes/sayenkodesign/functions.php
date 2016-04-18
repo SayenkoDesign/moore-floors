@@ -31,7 +31,8 @@ add_action('init', function() {
     $args = array(
         'public' => true,
         'has_archive' => true,
-        'label'  => 'Case Studies'
+        'label'  => 'Case Studies',
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
     );
     register_post_type( 'cases', $args );
     flush_rewrite_rules();
