@@ -23,6 +23,12 @@ h1, h2, h3, h4, h5, h6 {
 h2, h3, h4, h5, h6 {
   color: $red-dark;
 }
+h1 {
+  font-size: rem-calc(36px);
+  small {
+    font-size: rem-calc(30px);
+  }
+}
 
 blockquote {
   border: none;

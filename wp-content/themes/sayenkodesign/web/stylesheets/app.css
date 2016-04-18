@@ -5943,13 +5943,15 @@ table.hover tr:nth-of-type(even):hover {
     font-size: 36px; }
 
 .services {
+  padding-top: 2rem;
   padding-bottom: 3rem; }
   .services .columns {
     position: relative; }
   .services .warranty {
     position: relative;
-    top: -2rem;
-    margin-bottom: -2rem; }
+    text-align: center; }
+    .services .warranty img, .services .warranty .tooltip {
+      cursor: pointer; }
     .services .warranty .top.tooltip {
       background-color: #eaeae5;
       color: #BC0606;
@@ -5960,23 +5962,36 @@ table.hover tr:nth-of-type(even):hover {
       .services .warranty .top.tooltip::before {
         border-color: #eaeae5 transparent transparent;
         left: 4.875rem; }
+    .services .warranty img {
+      margin-bottom: 1rem; }
+      @media screen and (min-width: 40em) {
+        .services .warranty img {
+          margin-bottom: 0; } }
+    @media screen and (min-width: 40em) {
+      .services .warranty {
+        top: -2rem;
+        margin-bottom: -2rem;
+        text-align: left; } }
   .services .title {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: calc(50%);
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%); }
+    text-align: center; }
     .services .title small {
       display: block;
       line-height: 1; }
-  .services .content {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%); }
+    @media screen and (min-width: 40em) {
+      .services .title {
+        position: absolute;
+        top: 50%;
+        left: calc(50%);
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%); } }
+  @media screen and (min-width: 40em) {
+    .services .content {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%); } }
   .services .column, .services .columns {
     margin-bottom: 2rem; }
     @media screen and (min-width: 40em) {
@@ -6074,6 +6089,11 @@ h1, h2, h3, h4, h5, h6 {
 
 h2, h3, h4, h5, h6 {
   color: #83290e; }
+
+h1 {
+  font-size: 2.25rem; }
+  h1 small {
+    font-size: 1.875rem; }
 
 blockquote {
   border: none;
