@@ -5791,6 +5791,8 @@ table.hover tr:nth-of-type(even):hover {
 
 .header {
   background-color: #fefefe; }
+  .header .hide-for-small-only {
+    position: relative; }
   .header #primary-mobile-navigation {
     background-color: #d3d3bb; }
     .header #primary-mobile-navigation .dropdown.menu {
@@ -5977,6 +5979,18 @@ table.hover tr:nth-of-type(even):hover {
     color: #FFF;
     margin: 0;
     font-size: 36px; }
+  .hero-title .hero-navigation a {
+    display: inline-block;
+    color: #fefefe;
+    border: 2px solid #fefefe;
+    padding: 0.125rem;
+    line-height: 1;
+    font-size: 2.5rem;
+    border-radius: 4px;
+    margin: 1rem 0.5rem; }
+    .hero-title .hero-navigation a:hover {
+      color: #b4916b;
+      border-color: #b4916b; }
 
 .archive-navigation {
   margin: 3rem auto 0; }
@@ -6238,6 +6252,31 @@ table.hover tr:nth-of-type(even):hover {
     font-size: 0.875rem; }
   .single-post-content .title {
     color: #BC0606; }
+
+.single-cases-content {
+  padding: 3rem 0; }
+  .single-cases-content h1, .single-cases-content h2, .single-cases-content h3, .single-cases-content h4, .single-cases-content h5, .single-cases-content h6 {
+    color: #4a4a4a; }
+  .single-cases-content .before-after > div:first-of-type {
+    margin-bottom: 2rem; }
+  .single-cases-content .before-after img {
+    width: 100%; }
+  .single-cases-content .before-after .large-4 img:first-of-type {
+    margin-bottom: 2rem; }
+  .single-cases-content .before-after .container {
+    position: relative; }
+    .single-cases-content .before-after .container .overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fefefe; }
+    @media screen and (max-width: 39.9375em) {
+      .single-cases-content .before-after .container {
+        margin-bottom: 2rem; } }
+  .single-cases-content .testimonial {
+    margin-top: 6rem; }
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
