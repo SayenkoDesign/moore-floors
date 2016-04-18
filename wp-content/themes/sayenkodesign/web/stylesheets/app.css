@@ -6131,8 +6131,10 @@ table.hover tr:nth-of-type(even):hover {
   margin-bottom: 1rem; }
   .case-teaser img {
     margin-bottom: 0.5rem; }
+  .case-teaser .title, .case-teaser .teaser, .case-teaser .read-more {
+    padding: 0 0.25rem; }
   .case-teaser .title {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
     text-transform: none;
     margin-bottom: 1rem; }
   .case-teaser .teaser {
@@ -6149,7 +6151,7 @@ table.hover tr:nth-of-type(even):hover {
       position: relative;
       top: 1.5px; }
   .case-teaser:hover img {
-    opacity: 0.8; }
+    opacity: 0.5; }
   .case-teaser:hover .title {
     color: #A97C50; }
 

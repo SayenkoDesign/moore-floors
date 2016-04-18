@@ -8,8 +8,11 @@
   img {
     margin-bottom: $global-margin/2;
   }
+  .title, .teaser, .read-more {
+    padding: 0 $global-padding/4;
+  }
   .title {
-    font-size: rem-calc(18px);
+    font-size: rem-calc(22px);
     text-transform: none;
     margin-bottom: $global-margin;
   }
@@ -31,7 +34,7 @@
   }
   &:hover {
     img {
-      opacity: 0.8;
+      opacity: 0.5;
     }
     .title {
       color: $brown;
