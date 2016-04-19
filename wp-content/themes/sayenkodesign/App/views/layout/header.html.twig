@@ -1,8 +1,21 @@
 <div class="header-container" data-sticky-container>
     <header class="header" data-sticky data-options="marginTop:0;" style="width:100%" data-sticky-on="small">
         <div class="title-bar" data-responsive-toggle="mobile-menu" data-hide-for="medium">
-            <button class="menu-icon" type="button" data-toggle></button>
-            <div class="title-bar-title">Menu</div>
+            <div class="left">
+                <a href="tel:{{ get_field('north_number', 'option') }}">
+                    <img src="{{ wp_get_template_directory_uri() }}/web/images-min/phone.min.png" alt="">
+                </a>
+            </div>
+            <div class="right">
+                <a type="button" data-toggle>
+                    <img src="{{ wp_get_template_directory_uri() }}/web/images-min/menu.min.png" alt="">
+                </a>
+            </div>
+            <div class="center">
+                <a href="{{ wp_home_url('/') }}">
+                    <img src="{{ wp_get_template_directory_uri() }}/web/images-min/mobile-logo.min.png" alt="">
+                </a>
+            </div>
         </div>
         <div id="mobile-menu" class="hide-for-medium">
             <ul class="vertical menu">
@@ -17,7 +30,7 @@
         </div>
 
         <div class="hide-for-small-only">
-            <div class="expanded row column collapse tan-background top">
+            <div class="tan-background top">
                 <div class="row">
                     <div class="small-12 columns">
                         <ul class="simple horizontal menu">

@@ -1,5 +1,36 @@
 .header {
   background-color: $white;
+  position: relative;
+  z-index: 1;
+
+  .title-bar {
+    background-color: $white;
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    position: relative;
+    .center {
+      img {
+        height: 46px;
+      }
+    }
+    .left, .right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .left {
+      left: 0.5rem;
+      img {
+        height: 28px;
+      }
+    }
+    .right {
+      right: 0.5rem;
+      img {
+        height: 24px;
+      }
+    }
+  }
 
   .hide-for-small-only {
     position: relative;
@@ -15,6 +46,23 @@
           color: $red;
         }
       }
+    }
+    .is-accordion-submenu-parent {
+      position: static; // so the drop down will be relative to a higher level
+      > a::after {
+        display: inline;
+        padding-left: 1rem;
+        background-image: url('../images/arrow.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        right: auto;
+        width: 13px;
+        height: 6px;
+        border: none;
+      }
+    }
+    .is-accordion-submenu li {
+      display: block;
     }
   }
 
@@ -89,7 +137,7 @@
           background-image: url('../images/arrow.png');
           background-position: center;
           right: 0;
-          width: 16px;
+          width: 13px;
           height: 6px;
           border: none;
         }

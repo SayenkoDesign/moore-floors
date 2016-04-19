@@ -5790,7 +5790,30 @@ table.hover tr:nth-of-type(even):hover {
       text-align: left; } }
 
 .header {
-  background-color: #fefefe; }
+  background-color: #fefefe;
+  position: relative;
+  z-index: 1; }
+  .header .title-bar {
+    background-color: #fefefe;
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    position: relative; }
+    .header .title-bar .center img {
+      height: 46px; }
+    .header .title-bar .left, .header .title-bar .right {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%); }
+    .header .title-bar .left {
+      left: 0.5rem; }
+      .header .title-bar .left img {
+        height: 28px; }
+    .header .title-bar .right {
+      right: 0.5rem; }
+      .header .title-bar .right img {
+        height: 24px; }
   .header .hide-for-small-only {
     position: relative; }
   .header #primary-mobile-navigation {
@@ -5801,6 +5824,20 @@ table.hover tr:nth-of-type(even):hover {
         color: #4a4a4a; }
         .header #primary-mobile-navigation .dropdown.menu a:hover {
           color: #BC0606; }
+    .header #primary-mobile-navigation .is-accordion-submenu-parent {
+      position: static; }
+      .header #primary-mobile-navigation .is-accordion-submenu-parent > a::after {
+        display: inline;
+        padding-left: 1rem;
+        background-image: url("../images/arrow.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        right: auto;
+        width: 13px;
+        height: 6px;
+        border: none; }
+    .header #primary-mobile-navigation .is-accordion-submenu li {
+      display: block; }
   .header .top {
     text-transform: uppercase; }
     .header .top ul {
@@ -5855,7 +5892,7 @@ table.hover tr:nth-of-type(even):hover {
           background-image: url("../images/arrow.png");
           background-position: center;
           right: 0;
-          width: 16px;
+          width: 13px;
           height: 6px;
           border: none; }
       .header .bottom #primary-navigation .is-dropdown-submenu {
