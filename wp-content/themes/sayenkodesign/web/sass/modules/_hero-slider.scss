@@ -3,6 +3,9 @@
   .slide {
     position: relative;
   }
+  .slick-arrow {
+    display: none !important;
+  }
   img {
     width: 100%;
   }

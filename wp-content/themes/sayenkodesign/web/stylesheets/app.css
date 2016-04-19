@@ -6029,6 +6029,8 @@ table.hover tr:nth-of-type(even):hover {
   margin-bottom: 0; }
   .hero.slides .slide {
     position: relative; }
+  .hero.slides .slick-arrow {
+    display: none !important; }
   .hero.slides img {
     width: 100%; }
   .hero.slides .content {
