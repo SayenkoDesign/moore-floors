@@ -56,10 +56,7 @@
   }
 
   .column {
-    margin-bottom: $global-margin*2;
-    @include breakpoint(medium) {
-      margin-top: $global-margin*2;
-    }
+    margin-bottom: rem-calc(30px);
     @include breakpoint(large) {
       margin-bottom: 0;
     }

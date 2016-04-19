@@ -1,0 +1,42 @@
+<section class="recent">
+    <div class="row column">
+        <h1>
+            <small>Our</small>
+            RECENT PROJECTS
+        </h1>
+    </div>
+    <div class="row slides">
+        <div class="small-12 collapse">
+            <div class="slick-4">
+                {% for project in projects %}
+                    <div class="column">
+                        <a href="{{ project.page }}" class="box">
+                            {{ project.image | raw }}
+                            <div class="details">
+                                <div class="title1">{{ project.title_1 | raw }}</div>
+                                <div class="title2">{{ project.title_2 | raw }}</div>
+                                <div class="description">{{ project.content | raw }}</div>
+                                <span href="{{ project.page }}" class="tan hollow button">Read More</span>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="row small-up-1 medium-up-2 large-up-4 boxes">
+        {% for project in projects %}
+            <div class="column">
+                <a href="{{ project.page }}" class="box">
+                    {{ project.image | raw }}
+                    <div class="details">
+                        <div class="title1">{{ project.title_1 | raw }}</div>
+                        <div class="title2">{{ project.title_2 | raw }}</div>
+                        <div class="description">{{ project.content | raw }}</div>
+                        <span href="{{ project.page }}" class="tan hollow button">Read More</span>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</section>

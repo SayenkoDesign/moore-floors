@@ -6183,10 +6183,7 @@ table.hover tr:nth-of-type(even):hover {
           -ms-transform: translateY(-50%);
               transform: translateY(-50%); } }
   .services .column, .services .columns {
-    margin-bottom: 2rem; }
-    @media screen and (min-width: 42.5em) {
-      .services .column, .services .columns {
-        margin-top: 2rem; } }
+    margin-bottom: 1.875rem; }
     @media screen and (min-width: 75em) {
       .services .column, .services .columns {
         margin-bottom: 0; } }
@@ -6225,6 +6222,81 @@ table.hover tr:nth-of-type(even):hover {
         display: block;
         margin-bottom: 0.5625rem; }
       .services .box:hover .button {
+        display: inline-block; } }
+
+.recent {
+  padding: 3rem 0; }
+  .recent h1 {
+    margin-bottom: 1rem; }
+  .recent .slides {
+    display: none; }
+    @media screen and (min-width: 75em) {
+      .recent .slides {
+        display: block; } }
+  .recent .boxes .column, .recent .boxes .columns {
+    margin-bottom: 1.875rem; }
+  @media screen and (min-width: 75em) {
+    .recent .boxes {
+      display: none; } }
+  .recent .slick-4 {
+    margin: 0; }
+  .recent .slick-next, .recent .slick-prev {
+    z-index: 2; }
+    .recent .slick-next::before, .recent .slick-prev::before {
+      display: none; }
+  .recent .slick-next {
+    background-image: url("../images-min/right.min.png");
+    background-repeat: no-repeat;
+    width: 47px;
+    height: 79px;
+    right: 0; }
+    @media screen and (min-width: 75em) {
+      .recent .slick-next {
+        right: -50px; } }
+  .recent .slick-prev {
+    background-image: url("../images-min/left.min.png");
+    background-repeat: no-repeat;
+    width: 47px;
+    height: 79px;
+    left: 0; }
+    @media screen and (min-width: 75em) {
+      .recent .slick-prev {
+        left: -50px; } }
+  .recent .box {
+    display: block;
+    position: relative;
+    color: #fefefe; }
+    .recent .box img {
+      width: 100%; }
+    .recent .box p {
+      margin: 0; }
+    .recent .box .details {
+      background-color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 0.625rem; }
+    .recent .box .title1, .recent .box .title2 {
+      line-height: 1.2;
+      text-transform: uppercase;
+      font-size: 1.125rem; }
+    .recent .box .description {
+      display: none;
+      font-size: 0.875rem; }
+      .recent .box .description p {
+        line-height: 1.2; }
+    .recent .box .button {
+      display: none;
+      font-size: 0.75rem; }
+    @media screen and (min-width: 75em) {
+      .recent .box:hover .details {
+        top: 0; }
+      .recent .box:hover .title2 {
+        margin-bottom: 0.25rem; }
+      .recent .box:hover .description {
+        display: block;
+        margin-bottom: 0.5625rem; }
+      .recent .box:hover .button {
         display: inline-block; } }
 
 .why {

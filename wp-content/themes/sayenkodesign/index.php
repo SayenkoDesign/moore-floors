@@ -100,6 +100,22 @@ else if(is_page() || get_page_template_slug() == 'page-templates/home.php') {
                 ];
                 $flexibleContent[] = $twig->render('partials/generic.html.twig', $data);
                 break;
+            case 'recent_projects':
+                $data = [];
+                $data['projects'] = [];
+                $cases = get_sub_field('cases');
+                foreach($cases as $case) {
+                    $data['projects'][] = [
+                        'title_1' => $case['title_line_1'],
+                        'title_2' => $case['title_line_2'],
+                        'id' => $case['case_study']->ID,
+                        'page' => get_the_permalink($case['case_study']->ID),
+                        'image' => get_the_post_thumbnail($case['case_study']->ID),
+                        'content' => get_the_excerpt($case['case_study']->ID),
+                    ];
+                }
+                $flexibleContent[] = $twig->render('partials/recent.html.twig', $data);
+                break;
             default:
                 throw new \Exception("Template does not support a layout for $layout");
                 break;
