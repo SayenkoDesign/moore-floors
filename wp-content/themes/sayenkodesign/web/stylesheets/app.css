@@ -5915,6 +5915,10 @@ table.hover tr:nth-of-type(even):hover {
       padding-bottom: 0.625rem; }
     .header .bottom #primary-navigation {
       text-transform: uppercase; }
+      .header .bottom #primary-navigation > ul > li:first-of-type a {
+        padding-left: 0; }
+      .header .bottom #primary-navigation > ul > li:last-of-type a {
+        padding-right: 0; }
       .header .bottom #primary-navigation a {
         font-size: 1rem;
         padding: 1.3rem 2rem;

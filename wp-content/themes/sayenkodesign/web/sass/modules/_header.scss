@@ -122,6 +122,12 @@
     }
     #primary-navigation {
       text-transform: uppercase;
+      > ul > li:first-of-type a {
+        padding-left: 0;
+      }
+      > ul > li:last-of-type a {
+        padding-right: 0;
+      }
       a {
         font-size: rem-calc(16px);
         padding: 1.3rem 2rem;
