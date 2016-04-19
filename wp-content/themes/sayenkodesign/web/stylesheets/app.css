@@ -6042,22 +6042,42 @@ table.hover tr:nth-of-type(even):hover {
     max-width: 62.5rem;
     margin: 0 auto;
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 0.875rem;
     color: #fefefe; }
+    @media screen and (min-width: 75em) {
+      .hero.slides .content-center {
+        font-size: 1.75rem; } }
   .hero.slides p {
     margin: 0; }
   .hero.slides h1 {
-    font-size: 3.125rem;
+    font-size: 1.125rem;
     text-transform: uppercase;
     color: #fefefe;
-    margin: 0 0 2.625rem 0; }
+    margin: 0; }
+    @media screen and (min-width: 42.5em) {
+      .hero.slides h1 {
+        font-size: 2rem;
+        margin: 0 0 2rem 0; } }
+    @media screen and (min-width: 75em) {
+      .hero.slides h1 {
+        font-size: 3.125rem;
+        margin: 0 0 2.625rem 0; } }
   .hero.slides .tagline {
-    margin: 0 0 3.75rem 0; }
+    display: none; }
+    @media screen and (min-width: 75em) {
+      .hero.slides .tagline {
+        display: block;
+        margin: 0 0 3.75rem 0; } }
   .hero.slides a.button {
-    font-size: 1.125rem;
+    display: none;
+    font-size: 0.75rem;
     color: #fefefe;
     background-color: transparent;
     border: 2px solid #fefefe; }
+    @media screen and (min-width: 42.5em) {
+      .hero.slides a.button {
+        display: inline-block;
+        font-size: 1.125rem; } }
 
 .hero-title {
   background-image: url("../images/header.png");

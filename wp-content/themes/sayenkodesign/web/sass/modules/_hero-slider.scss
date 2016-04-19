@@ -16,25 +16,45 @@
     max-width: rem-calc(1000px);
     margin: 0 auto;
     text-align: center;
-    font-size: rem-calc(28px);
+    font-size: rem-calc(14px);
     color: $white;
+    @include breakpoint(large) {
+      font-size: rem-calc(28px);
+    }
   }
   p {
     margin: 0;
   }
   h1 {
-    font-size: rem-calc(50px);
+    font-size: rem-calc(18px);
     text-transform: uppercase;
     color: $white;
-    margin: 0 0 rem-calc(42px) 0;
+    margin: 0;
+    @include breakpoint(medium) {
+      font-size: rem-calc(32px);
+      margin: 0 0 $global-margin*2 0;
+    }
+    @include breakpoint(large) {
+      font-size: rem-calc(50px);
+      margin: 0 0 rem-calc(42px) 0;
+    }
   }
   .tagline {
-    margin: 0 0 rem-calc(60px) 0;
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+      margin: 0 0 rem-calc(60px) 0;
+    }
   }
   a.button {
-    font-size: rem-calc(18px);
+    display: none;
+    font-size: rem-calc(12px);
     color: $white;
     background-color: transparent;
     border: 2px solid $white;
+    @include breakpoint(medium) {
+      display: inline-block;
+      font-size: rem-calc(18px);
+    }
   }
 }
