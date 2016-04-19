@@ -2,24 +2,64 @@
   background: -moz-linear-gradient(left, #926453 50%, #83290E 50%);
   background: -webkit-gradient(linear, left top, right top, from(#926453), color-stop(.5, #926453), color-stop(.5, #83290E));
   text-align: center;
+  @include breakpoint(large) {
+    text-align: left;
+  }
   a {
-    display: inline-block;
+    display: block;
     position: relative;
+    @include breakpoint(large) {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  img {
+    width: auto;
+    margin-bottom: 1rem;
+    @include breakpoint(large) {
+      float: left;
+      padding-right: 0.5rem;
+      margin-bottom: 0;
+    }
+  }
+  h2 {
+    position: relative;
+    font-size: rem-calc(28px);
+    color: $white;
+    line-height: 1;
+    margin: 0;
+    small {
+      font-size: rem-calc(18px);
+      color: $tan-dark;
+      line-height: 1;
+    }
   }
   .columns {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    position: relative;
+    @include breakpoint(large) {
+      min-height: calc(70px + 2rem);
+    }
   }
   .price {
     background-color: #926453;
+    h2 {
+      top: 10px;
+    }
   }
   .schedule {
     background-color: #A74021;
+    h2 {
+      top: 14px;
+    }
   }
   .call {
     background-color: #83290E;
-  }
-  @include breakpoint(medium) {
-    text-align: left;
+    h2 {
+      top: 6px;
+    }
   }
 }

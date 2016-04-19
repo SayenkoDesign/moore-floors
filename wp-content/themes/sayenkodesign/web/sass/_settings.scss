@@ -34,6 +34,15 @@ $header-sizes: (
   'h4': 18
 );
 
+// breakpoints
+$breakpoints: (
+    small: 0,
+    medium: 680px,
+    large: 1200px,
+    xlarge: 1440px,
+    xxlarge: 1640px,
+);
+
 // pagination
 $pagination-item-color: #999999;
 $pagination-item-background-current: $brown;
