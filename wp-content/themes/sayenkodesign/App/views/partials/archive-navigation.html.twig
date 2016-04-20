@@ -1,31 +1,13 @@
 <div class="row archive-navigation">
     <div class="medium-4 columns large-3 columns">
-        <form role="search" method="get" class="searchform" action="{{ wp_home_url( '/' ) }}">
-            <div class="input-group">
-                <input class="input-group-field" type="search" placeholder="Search For..." name="s">
-                <input type="hidden" name="post_type" value="post" />
-                <div class="input-group-button">
-                    <button type="submit" class="button" value="Search">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
+        {% include 'partials/search.html.twig' %}
     </div>
     <div class="medium-4 large-3 columns">
-        <button class="secondary hollow dropdown button"  data-toggle="example-dropdown">Select a Category</button>
-        <div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
-            <ul class="vertical menu">
-                {{ wp_list_categories({title_li: ''}) | raw }}
-            </ul>
-        </div>
+        {% include 'partials/category.html.twig' %}
     </div>
     <div class="medium-4 colomns large-6 columns">
         {% if wp_is_single() %}
-            <div class="prev-next">
-                {{ wp_get_previous_post_link('%link', '< PREVIOUS') | raw }}
-                {{ wp_get_next_post_link('%link', 'NEXT >') | raw }}
-            </div>
+            {% include 'partials/prev-next.html.twig' %}
         {% endif %}
     </div>
 </div>

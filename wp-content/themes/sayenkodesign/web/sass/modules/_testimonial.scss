@@ -1,13 +1,13 @@
 .testimonial {
   max-width: 340px;
   p::before {
-    content: '"';
-    font-style: normal;
-    color: $brown-light;
-    font-size: 100px;
+    content: '';
+    background-image: url('../images-min/quote.min.png');
     line-height: 0;
-    vertical-align: bottom;
-    padding-right: 0.5rem;
+    display: inline-block;
+    padding-right: 1rem;
+    width: 28px;
+    height: 20px;
   }
 }
 .block.testimonial {

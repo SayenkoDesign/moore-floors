@@ -37,9 +37,13 @@
     }
   }
   .columns {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: $global-padding * 3;
+    padding-bottom: $global-padding * 3;
     position: relative;
+    @include breakpoint(large) {
+      padding-top: $global-padding;
+      padding-bottom: $global-padding;
+    }
     @include breakpoint(large) {
       min-height: calc(70px + 2rem);
     }

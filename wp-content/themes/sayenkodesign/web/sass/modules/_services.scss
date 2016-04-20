@@ -1,6 +1,10 @@
 .services {
-  padding-top: $global-margin*2;
-  padding-bottom: $global-margin*3;
+  padding: $global-margin*3 0;
+  .heading {
+    @include breakpoint(medium) {
+      margin-bottom: $global-margin*2;
+    }
+  }
   .columns {
     position: relative;
   }
@@ -48,6 +52,9 @@
     }
   }
   .content {
+    p {
+      margin: 0;
+    }
     @include breakpoint(medium) {
       position: absolute;
       top: 50%;
@@ -59,6 +66,9 @@
     margin-bottom: rem-calc(30px);
     @include breakpoint(large) {
       margin-bottom: 0;
+    }
+    &:last-of-type {
+      margin: 0;
     }
   }
   .box {
@@ -111,5 +121,8 @@
         }
       }
     }
+  }
+  @include breakpoint(medium) {
+    padding-top: 0;
   }
 }

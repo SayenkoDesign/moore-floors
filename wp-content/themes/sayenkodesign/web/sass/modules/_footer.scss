@@ -52,6 +52,10 @@
     }
   }
   .menu {
+    margin-bottom: $global-padding;
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
     a {
       color: $gray-font;
       padding: 0.25rem 0;

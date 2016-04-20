@@ -108,3 +108,54 @@ blockquote {
 .pagination {
   margin-top: $global-margin * 3;
 }
+
+.share {
+  .st_email_custom, .st_facebook_custom,
+  .st_linkedin_custom, .st_twitter_custom,
+  .st_googleplus_custom {
+    background-color: #000;
+    color: $white;
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    margin-right: $global-margin/2;
+    cursor: pointer;
+    &:last-of-type {
+      margin-right: 0;
+    }
+    &.st_email_custom {
+      background-color: #728a8d;
+      &:hover {
+        background-color: darken(#728a8d, 10%);
+      }
+    }
+    &.st_facebook_custom {
+      background-color: #395799;
+      &:hover {
+        background-color: darken(#395799, 10%);
+      }
+    }
+    &.st_linkedin_custom {
+      background-color: #0076b7;
+      &:hover {
+        background-color: darken(#0076b7, 10%);
+      }
+    }
+    &.st_twitter_custom {
+      background-color: #50aaf0;
+      &:hover {
+        background-color: darken(#50aaf0, 10%);
+      }
+    }
+    &.st_googleplus_custom {
+      background-color: #dd4c3b;
+      &:hover {
+        background-color: darken(#dd4c3b, 10%);
+      }
+    }
+    .fa {
+      position: relative;
+      top: 8px;
+    }
+  }
+}

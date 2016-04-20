@@ -1,6 +1,19 @@
 {% extends 'base.html.twig' %}
 {% block content %}
-    {% include 'partials/archive-navigation.html.twig' %}
+    <div class="row archive-navigation">
+        <div class="large-8 large-centered columns">
+            <div class="row">
+                <div class="medium-6 columns">
+                    {% include 'partials/search.html.twig' %}
+                </div>
+                <div class="medium-6 columns">
+                    {% if wp_is_single() %}
+                        {% include 'partials/prev-next.html.twig' %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="single-post-content">
         <div class="content row">
             <div class="large-8 large-centered columns">
@@ -19,12 +32,11 @@
     </section>
     <section class="row column social">
         <div class="share text-center">
-            <span class='st__large' displayText=''></span>
-            <span class='st_email_large' displayText='Email'></span>
-            <span class='st_facebook_large' displayText='Facebook'></span>
-            <span class='st_linkedin_large' displayText='LinkedIn'></span>
-            <span class='st_twitter_large' displayText='Tweet'></span>
-            <span class='st_googleplus_large' displayText='Google +'></span>
+            <span class='st_email_custom' displayText='Email'><i class="fa fa-fw fa-envelope"></i></span>
+            <span class='st_facebook_custom' displayText='Facebook'><i class="fa fa-fw fa-facebook"></i></span>
+            <span class='st_linkedin_custom' displayText='LinkedIn'><i class="fa fa-fw fa-linkedin"></i></span>
+            <span class='st_twitter_custom' displayText='Tweet'><i class="fa fa-fw fa-twitter"></i></span>
+            <span class='st_googleplus_custom' displayText='Google +'><i class="fa fa-fw fa-google-plus"></i></span>
         </div>
         <script type="text/javascript">var switchTo5x=true;</script>
         <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>

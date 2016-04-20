@@ -1,5 +1,5 @@
 .why {
-  padding: $global-margin * 2 0 $global-margin * 8 0;
+  padding: $global-margin * 3 0;
   background-color: $tan;
   position: relative;
   .background {
@@ -47,5 +47,8 @@
     @include breakpoint(medium) {
       text-align: left;
     }
+  }
+  @include breakpoint(medium) {
+    padding: $global-margin * 3 0 $global-margin * 8 0;
   }
 }

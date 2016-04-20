@@ -1,0 +1,6 @@
+<button class="secondary hollow dropdown button"  data-toggle="example-dropdown">Select a Category</button>
+<div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
+    <ul class="vertical menu">
+        {{ wp_list_categories({title_li: ''}) | raw }}
+    </ul>
+</div>
