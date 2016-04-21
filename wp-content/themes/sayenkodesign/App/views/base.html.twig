@@ -66,11 +66,12 @@
                         </a>
                     </div>
                     <div class="medium-4 columns call" data-equalizer-watch>
-                        <a href="">
+                        <a href="tel:{{ get_field('north_number', 'option') }}">
                             <img src="{{ get_field('call_image', 'option').url }}" alt="" />
                             <h2>
                                 <small>CALL US TODAY!</small>
-                                (206) 718-9340
+                                ({{ get_field('north_number', 'option')[:3] }})
+                                {{ get_field('north_number', 'option')[3:3] }}-{{ get_field('north_number', 'option')[6:4] }}
                             </h2>
                         </a>
                     </div>

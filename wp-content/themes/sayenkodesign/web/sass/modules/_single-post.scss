@@ -3,6 +3,7 @@
   .float-left {
     margin: 0 $global-padding $global-padding 0;
     @include breakpoint(small only) {
+      width: 100%;
       float: none !important;
       text-align: center;
       img {

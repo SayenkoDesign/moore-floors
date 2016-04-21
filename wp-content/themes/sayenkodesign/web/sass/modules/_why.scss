@@ -49,6 +49,11 @@
     }
   }
   @include breakpoint(medium) {
+    padding: $global-margin * 3 0;
+  }
+}
+.home .why {
+  @include breakpoint(medium) {
     padding: $global-margin * 3 0 $global-margin * 8 0;
   }
 }

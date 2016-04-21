@@ -2,12 +2,18 @@
   background-image: url("../images/header.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: $global-margin * 6 0;
   text-align: center;
+  padding: $global-margin * 3 0;
+  @include breakpoint(medium) {
+    padding: $global-margin * 6 0;
+  }
   h1 {
     color: #FFF;
     margin: 0;
-    font-size: 36px;
+    font-size: rem-calc(28px);
+    @include breakpoint(medium) {
+      font-size: rem-calc(36px);
+    }
   }
   .hero-navigation {
     a {
@@ -16,12 +22,15 @@
       border: 2px solid $white;
       padding: $global-padding/8;
       line-height: 1;
-      font-size: rem-calc(40px);
       border-radius: 4px;
       margin: $global-margin $global-margin/2;
+      font-size: rem-calc(28px);
       &:hover {
         color: $brown-light;
         border-color: $brown-light;
+      }
+      @include breakpoint(medium) {
+        font-size: rem-calc(40px);
       }
     }
   }

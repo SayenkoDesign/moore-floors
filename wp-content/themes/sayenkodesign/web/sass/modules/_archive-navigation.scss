@@ -25,10 +25,17 @@
     .dropdown.button {
       width: 100%;
     }
+    a:first-of-type {
+      float: left;
+    }
     a:last-of-type {
+      float: right;
       margin-left: $global-padding*2;
     }
     @include breakpoint(medium) {
+      a:first-of-type, a:last-of-type {
+        float: none;
+      }
       text-align: left;
       float: right;
     }

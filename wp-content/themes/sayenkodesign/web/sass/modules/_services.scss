@@ -52,10 +52,12 @@
     }
   }
   .content {
+    margin-bottom: $global-margin * 2;
     p {
       margin: 0;
     }
     @include breakpoint(medium) {
+      margin-bottom: 0;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);

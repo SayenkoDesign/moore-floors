@@ -1,18 +1,27 @@
 <section class="why">
     {% if wp_is_front_page() %}
         <div class="background"><img src="{{ background.url }}" alt=""></div>
-    {% endif %}
-    <div class="row column">
-        <div class="title">
-            <img src="{{ icon.url }}" alt="">
-            <h1>
-                <small>{{ title_1 | raw }}</small>
-                {{ title_2 | raw }}
-            </h1>
+        <div class="row column">
+            <div class="title">
+                <img src="{{ icon.url }}" alt="">
+                <h1>
+                    <small>{{ title_1 | raw }}</small>
+                    {{ title_2 | raw }}
+                </h1>
+            </div>
         </div>
-    </div>
+    {% endif %}
     <div class="row">
         <div class="{% if wp_is_front_page() %}medium-6{% else %}medium-8{% endif %} columns">
+            {% if not wp_is_front_page() %}
+                <div class="title">
+                    <img src="{{ icon.url }}" alt="">
+                    <h1>
+                        <small>{{ title_1 | raw }}</small>
+                        {{ title_2 | raw }}
+                    </h1>
+                </div>
+            {% endif %}
             {{ accordion | raw }}
         </div>
         <div class="{% if wp_is_front_page() %}medium-6{% else %}medium-4{% endif %} columns">

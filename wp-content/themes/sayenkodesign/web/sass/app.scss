@@ -69,7 +69,7 @@ blockquote {
   .accordion-title {
     font-family: $body-font-family;
     border: none;
-    margin-top: $global-margin * 1.5;
+    margin-top: $global-margin * 2;
     padding: 0 0 0 rem-calc(20px);
     font-size: rem-calc(18px);
     background-color: transparent;
@@ -79,10 +79,12 @@ blockquote {
     &::before {
       right: auto;
       left: 0;
-      top: auto;
-      bottom: 0;
+      top: 50%;
+      bottom: auto;
       content: "\f067";
       font-family: "FontAwesome";
+      display: block;
+      position: absolute;
     }
   }
   .is-active .accordion-title {
@@ -107,6 +109,9 @@ blockquote {
 
 .pagination {
   margin-top: $global-margin * 3;
+  li {
+    display: inline-block;
+  }
 }
 
 .share {

@@ -5,7 +5,9 @@
   }
   .before-after {
     > div:first-of-type {
-      margin-bottom: $global-padding*2;
+      @include breakpoint(large) {
+        margin-bottom: $global-padding*2;
+      }
     }
     img {
       width: 100%;

@@ -23,7 +23,10 @@ $slick->register();
 $slickTheme->register();
 $stylesheet->register();
 
-$script = new Script('script', get_stylesheet_directory_uri() . '/web/scripts-min/app.min.js');
+add_action('wp_enqueue_scripts', function() {
+    wp_enqueue_script('jquery');
+});
+$script = new Script('script', get_stylesheet_directory_uri() . '/web/scripts-min/app.min.js', ['jquery']);
 $script->register();
 
 // post types
@@ -41,7 +44,6 @@ add_action('init', function() {
 // menus
 register_nav_menus([
     'main' => 'Main menu',
-    'secondary' => 'Secondary menu',
     'footer_left' => 'Left footer menu',
     'footer_right' => 'Right footer menu',
 ]);
