@@ -5775,7 +5775,11 @@ table.hover tr:nth-of-type(even):hover {
   text-align: center; }
   @media screen and (min-width: 75em) {
     .cta {
-      text-align: left; } }
+      text-align: left;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 2; } }
   .cta a {
     display: block;
     position: relative; }
@@ -5811,11 +5815,7 @@ table.hover tr:nth-of-type(even):hover {
     position: relative; }
     @media screen and (min-width: 75em) {
       .cta .columns {
-        padding-top: 1rem;
-        padding-bottom: 1rem; } }
-    @media screen and (min-width: 75em) {
-      .cta .columns {
-        min-height: calc(70px + 2rem); } }
+        min-height: calc(70px + 4rem); } }
   .cta .price {
     background-color: #926453; }
     .cta .price h2 {
@@ -6029,7 +6029,8 @@ table.hover tr:nth-of-type(even):hover {
     @media screen and (min-width: 75em) {
       .footer .social {
         float: right;
-        margin-bottom: 0; } }
+        margin-bottom: 0;
+        padding-bottom: 8rem; } }
   @media screen and (min-width: 42.5em) and (max-width: 74.9375em) {
     .footer {
       text-align: center; } }
@@ -6340,16 +6341,13 @@ table.hover tr:nth-of-type(even):hover {
   position: relative; }
   .why .background {
     display: none; }
-    @media screen and (min-width: 42.5em) {
+    @media screen and (min-width: 75em) {
       .why .background {
         display: block;
         position: absolute;
-        right: 0;
-        bottom: 0;
-        z-index: 0; } }
-    @media screen and (min-width: 42.5em) {
-      .why .background {
+        z-index: 0;
         right: auto;
+        bottom: 0;
         left: calc(50% + 600px);
         -webkit-transform: translateX(-100%);
             -ms-transform: translateX(-100%);
@@ -6389,7 +6387,7 @@ table.hover tr:nth-of-type(even):hover {
     .why {
       padding: 3rem 0; } }
 
-@media screen and (min-width: 42.5em) {
+@media screen and (min-width: 75em) {
   .home .why {
     padding: 3rem 0 8rem 0; } }
 
@@ -6398,16 +6396,18 @@ table.hover tr:nth-of-type(even):hover {
   .generic-content h1, .generic-content h2, .generic-content h3, .generic-content h4, .generic-content h5, .generic-content h6 {
     color: #4a4a4a; }
 
-.testimonial {
-  max-width: 340px; }
-  .testimonial p::before {
-    content: '';
-    background-image: url("../images-min/quote.min.png");
-    line-height: 0;
-    display: inline-block;
-    padding-right: 1rem;
-    width: 28px;
-    height: 20px; }
+.testimonial p::before {
+  content: '';
+  background-image: url("../images-min/quote.min.png");
+  line-height: 0;
+  display: inline-block;
+  padding-right: 1rem;
+  width: 28px;
+  height: 20px; }
+
+@media screen and (min-width: 75em) {
+  .testimonial {
+    max-width: 340px; } }
 
 .block.testimonial {
   position: relative;

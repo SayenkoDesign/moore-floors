@@ -4,15 +4,12 @@
   position: relative;
   .background {
     display: none;
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
       display: block;
       position: absolute;
-      right: 0;
-      bottom: 0;
       z-index: 0;
-    }
-    @include breakpoint(medium) {
       right: auto;
+      bottom: 0;
       left: calc(50% + 600px);
       transform: translateX(-100%);
     }
@@ -53,7 +50,7 @@
   }
 }
 .home .why {
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     padding: $global-margin * 3 0 $global-margin * 8 0;
   }
 }

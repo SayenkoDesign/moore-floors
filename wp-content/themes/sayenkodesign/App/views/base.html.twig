@@ -13,12 +13,11 @@
 
     {% include "recipes/google-analytics.html.twig" %}
 </head>
-<body {{ wp_body_class() | raw }}>
+<body {{ wp_body_class() | raw }} data-sticky-container>
 {% block body %}
     {% block header %}
         {% include "layout/header.html.twig" %}
     {% endblock %}
-
     {% if hero_title is not defined or hero_title == true %}
         <section class="hero-title">
             <div class="row column">
@@ -79,7 +78,6 @@
             </section>
         {% endif %}
     {% endblock %}
-
     {% block footer %}
         {% include "layout/footer.html.twig" %}
     {% endblock %}

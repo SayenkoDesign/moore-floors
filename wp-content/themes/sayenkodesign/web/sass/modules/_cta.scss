@@ -4,6 +4,10 @@
   text-align: center;
   @include breakpoint(large) {
     text-align: left;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
   }
   a {
     display: block;
@@ -41,11 +45,7 @@
     padding-bottom: $global-padding * 3;
     position: relative;
     @include breakpoint(large) {
-      padding-top: $global-padding;
-      padding-bottom: $global-padding;
-    }
-    @include breakpoint(large) {
-      min-height: calc(70px + 2rem);
+      min-height: calc(70px + 4rem);
     }
   }
   .price {

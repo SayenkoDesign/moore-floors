@@ -82,6 +82,7 @@
     @include breakpoint(large) {
       float: right;
       margin-bottom: 0;
+      padding-bottom: 8rem;
     }
   }
   @include breakpoint(medium only) {

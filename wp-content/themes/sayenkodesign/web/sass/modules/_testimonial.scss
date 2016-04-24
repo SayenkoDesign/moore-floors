@@ -1,5 +1,4 @@
 .testimonial {
-  max-width: 340px;
   p::before {
     content: '';
     background-image: url('../images-min/quote.min.png');
@@ -8,6 +7,9 @@
     padding-right: 1rem;
     width: 28px;
     height: 20px;
+  }
+  @include breakpoint(large) {
+    max-width: 340px;
   }
 }
 .block.testimonial {
