@@ -5158,7 +5158,7 @@ body.is-reveal-open {
   z-index: 1006;
   padding: 1rem;
   border: 1px solid #cacaca;
-  background-color: #fefefe;
+  background-color: rgba(211, 211, 187, 0.95);
   border-radius: 0;
   position: relative;
   top: 100px;
@@ -5733,6 +5733,9 @@ table.hover tr:nth-of-type(even):hover {
 
 .tan-background {
   background-color: #eaeae5; }
+
+.primary-text {
+  color: #BC0606; }
 
 .comment-respond {
   margin: 3rem 0; }
@@ -6508,6 +6511,155 @@ table.hover tr:nth-of-type(even):hover {
   .single-cases-content .testimonial {
     margin-top: 6rem; }
 
+section.warranty {
+  text-align: center; }
+  section.warranty img {
+    position: relative;
+    bottom: 65px; }
+
+.estimate-form h2 {
+  color: #8D979F;
+  margin-bottom: 2rem; }
+
+.estimate-form label {
+  font-size: 1.125rem; }
+
+.estimate-form input[type=radio] + label {
+  display: inline;
+  color: #8D979F; }
+
+.estimate-form .radio-wrapper {
+  display: inline-block; }
+
+.estimate-form a.calculator:hover, .estimate-form a.lightbox:hover {
+  text-decoration: underline; }
+
+.estimate-form .navigation {
+  text-align: center; }
+
+.estimate-form .next.button, .estimate-form .prev.button {
+  margin-top: 2rem;
+  padding: 1.25rem 2.1875rem;
+  position: relative;
+  border: none;
+  font-weight: bold; }
+  .estimate-form .next.button:before, .estimate-form .prev.button:before {
+    content: "";
+    display: block;
+    width: 0.9375rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0; }
+
+.estimate-form .next.button::before {
+  background: -moz-linear-gradient(top, #a61402 50%, #d42d19 50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#a61402), color-stop(0.5, #a61402), color-stop(0.5, #d42d19)); }
+
+.estimate-form .prev.button {
+  background-color: #A4ACAF;
+  margin-right: 1rem; }
+  .estimate-form .prev.button:hover {
+    background-color: #899397; }
+  .estimate-form .prev.button::before {
+    background: -moz-linear-gradient(top, #959698 50%, #CDD1D2 50%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#959698), color-stop(0.5, #959698), color-stop(0.5, #CDD1D2)); }
+
+.steps {
+  position: relative;
+  margin-bottom: 3rem; }
+  .steps:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    height: 8px;
+    top: calc(24px - 4px);
+    left: calc(15% + 30px/2);
+    right: calc(15% + 30px/2);
+    background-color: #cfd1d1; }
+  .steps .step {
+    position: relative;
+    margin: 0 auto 1rem;
+    width: 48px;
+    height: 48px;
+    padding-top: 0.4rem;
+    font-size: 1.5rem;
+    color: #FFF;
+    text-align: center;
+    border-radius: 100%;
+    background-color: #cfd1d1; }
+    .steps .step.active {
+      background-color: #BC0606; }
+      .steps .step.active + h2 {
+        color: #BC0606; }
+        .steps .step.active + h2 small {
+          color: #4a4a4a; }
+    .steps .step + h2 {
+      text-align: center;
+      color: #cfd1d1; }
+      .steps .step + h2 small {
+        color: #cfd1d1; }
+
+.species label.hide-for-small-only {
+  display: inline-block;
+  border: 2px solid #FFF;
+  margin-right: 4px; }
+  .species label.hide-for-small-only.active {
+    border: 2px solid #4a4a4a; }
+  .species label.hide-for-small-only .has-tip {
+    border: none;
+    cursor: pointer; }
+
+.lightbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #d3d3bb; }
+
+.quote h2 {
+  color: #8D979F; }
+
+.quote table tbody {
+  border: none; }
+
+.quote table tbody tr:nth-child(2n) {
+  background: transparent; }
+
+.quote th {
+  color: #BC0606; }
+
+.quote th:first-of-type, .quote td:first-of-type {
+  text-align: left; }
+
+.quote th:last-of-type, .quote td:last-of-type {
+  text-align: right; }
+
+.quote th:first-of-type {
+  color: #4a4a4a; }
+
+.quote td:first-of-type {
+  padding-left: 2rem; }
+
+.quote td {
+  color: #8D979F;
+  padding: 0.25rem; }
+
+.estimate-form {
+  display: none; }
+  .estimate-form:first-of-type {
+    display: block; }
+  .estimate-form .yes {
+    display: none; }
+
+.estimate-details, .estimate-details .estimate-form, .submit {
+  display: none; }
+
+#projectType {
+  display: block; }
+
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-weight: bold; }
@@ -6644,3 +6796,17 @@ blockquote {
   .share .st_googleplus_custom .fa {
     position: relative;
     top: 8px; }
+
+.close-button {
+  top: 2rem;
+  width: 59px;
+  height: 60px;
+  background-image: url("../images-min/close.min.png");
+  background-repeat: no-repeat; }
+
+.close-button-wrapper {
+  position: relative; }
+
+.reveal-content {
+  position: relative;
+  top: 25%; }

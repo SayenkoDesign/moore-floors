@@ -1,0 +1,33 @@
+<div class="wrap">
+    <h2>Estimates <a href="{{ csv | raw }}" class="page-title-action">Download CSV</a></h2>
+    <div class="post">
+        <table class="wp-list-table widefat fixed striped" id="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Service</th>
+                    <th>Sq Feet</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for estimate in estimates %}
+                    <tr>
+                        <td>{{ estimate.id }}</td>
+                        <td>{{ estimate.date | date('F jS Y') }}</td>
+                        <td>{{ estimate.name | raw }}</td>
+                        <td>{{ estimate.phone | raw }}</td>
+                        <td>{{ estimate.email | raw }}</td>
+                        <td>{{ estimate.service | raw }}</td>
+                        <td>{{ estimate.sq_ft }}</td>
+                        <td>${{ estimate.price |number_format(2, '.', ',')}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

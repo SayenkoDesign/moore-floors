@@ -24,7 +24,8 @@ var options = {
         src: [
             'bower_components/foundation-sites/dist/foundation.js',
             'bower_components/slick-carousel/slick/slick.js',
-            'scripts/app.js'
+            'scripts/app.js',
+            'scripts/estimates.js'
         ],
         dist: 'scripts-min'
     },

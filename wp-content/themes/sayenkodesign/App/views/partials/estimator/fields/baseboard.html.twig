@@ -1,0 +1,13 @@
+{% if get_field('baseboard_removal_and_reattach', 'option')[0][price_key] != "" %}
+    <fieldset class="row">
+        <div class="medium-8 columns">
+            <label>Baseboard removal and re-attach?</label>
+        </div>
+        <div class="medium-4 columns text-right">
+            <input type="radio" name="baseboard{{ type }}" value="Yes" id="Baseboard{{ type }}Yes" data-amount="{{ get_field('baseboard_removal_and_reattach', 'option')[0][price_key] }}" required>
+            <label for="Baseboard{{ type }}Yes">Yes</label>
+            <input type="radio" name="baseboard{{ type }}" value="No" id="Baseboard{{ type }}No" data-amount="0" required checked>
+            <label for="Baseboard{{ type }}No">No</label>
+        </div>
+    </fieldset>
+{% endif %}

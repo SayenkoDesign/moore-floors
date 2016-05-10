@@ -18,6 +18,24 @@
 @import "modules/boxed-teaser";
 @import "modules/single-post";
 @import "modules/single-cases";
+@import "modules/warranty";
+@import "modules/estimates";
+
+.estimate-form {
+  display: none;
+  &:first-of-type {
+    display: block;
+  }
+  .yes {
+    display: none;
+  }
+}
+.estimate-details, .estimate-details .estimate-form, .submit {
+  display: none;
+}
+#projectType {
+  display: block;
+}
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
@@ -163,4 +181,19 @@ blockquote {
       top: 8px;
     }
   }
+}
+
+.close-button {
+  top: 2rem;
+  width: 59px;
+  height: 60px;
+  background-image: url('../images-min/close.min.png');
+  background-repeat: no-repeat;
+}
+.close-button-wrapper {
+  position: relative;
+}
+.reveal-content {
+  position: relative;
+  top: 25%;
 }

@@ -1,0 +1,7 @@
+<label>Do you have your own material?
+    <select name="own{{ type }}" id="own{{ type }}">
+        <option value="yes" data-amount="{{ get_field('own_material_discount', 'option')[0][price_key] }}">Yes</option>
+        <option value="no" data-amount="0" selected>No</option>
+    </select>
+</label>
+<br>

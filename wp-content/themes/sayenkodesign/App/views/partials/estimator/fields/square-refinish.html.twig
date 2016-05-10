@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="medium-6 large-4 columns">
+        <label for="square{{ type }}">
+            Approx square footage of the existing flooring to be refinished
+            <input type="number" name="squareRefinish" id="squareRefinish{{ type }}" required min="0" step="1"/>
+            <span class="form-error">This field is required.</span>
+        </label>
+    </div>
+    <div class="medium-6 large-8 columns text-right">
+        <a data-open="calculatorRefinishModal{{ type }}" class="calculator">Need Help to Calculate?</a>
+    </div>
+    <div class="full reveal" id="calculatorRefinishModal{{ type }}" data-reveal>
+        <div class="row column close-button-wrapper">
+            <button class="close-button" data-close aria-label="Close modal" type="button"></button>
+        </div>
+        <div class="row reveal-content">
+            <div class="large-6 large-centered columns">
+                <label for="">Width
+                    <div class="row">
+                        <div class="medium-6 columns">
+                            <input type="number" name="calculateWidthFeet{{ type }}" placeholder="Enter Feet" min="0" step="1"/>
+                        </div>
+                        <div class="medium-6 columns">
+                            <input type="number" name="calculateWidthInches{{ type }}" placeholder="Enter Inches" min="0" step="1"/>
+                        </div>
+                    </div>
+                </label>
+                <label for="">Length
+                    <div class="row">
+                        <div class="medium-6 columns">
+                            <input type="number" name="calculateLengthFeet{{ type }}" placeholder="Enter Feet" min="0" step="1"/>
+                        </div>
+                        <div class="medium-6 columns">
+                            <input type="number" name="calculateLengthInches{{ type }}" placeholder="Enter Inches" min="0" step="1"/>
+                        </div>
+                    </div>
+                </label>
+                <div class="navigation">
+                    <a class="button calculate" type="submit" data-field="#square{{ type }}">CALCULATE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

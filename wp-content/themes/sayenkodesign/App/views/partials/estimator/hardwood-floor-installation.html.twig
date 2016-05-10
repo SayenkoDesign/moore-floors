@@ -1,0 +1,18 @@
+<form action="#" data-abide novalidate class="estimate-form"  id="projectA" autocomplete="off">
+    <h2><span class="primary-text">You Selected:</span> Hardwood Floor Installation</h2>
+    <input type="hidden" name="BaseA" value="{{ get_field('installation_base_price', 'option') }}">
+    {% set type = "A" %}
+    {% set price_key = "site_finished_price" %}
+    {% include 'partials/estimator/fields/species.html.twig' %}
+    {% include 'partials/estimator/fields/width.html.twig' %}
+    {% include 'partials/estimator/fields/stain.html.twig' %}
+    {% include 'partials/estimator/fields/finish.html.twig' %}
+    {% include 'partials/estimator/fields/square.html.twig' %}
+    {% include 'partials/estimator/fields/removal.html.twig' %}
+    {% include 'partials/estimator/fields/baseboard.html.twig' %}
+
+    <div class="navigation">
+        <a href="#" class="button prev">PREVIOUS</a>
+        <button class="button next" type="submit">NEXT</button>
+    </div>
+</form>

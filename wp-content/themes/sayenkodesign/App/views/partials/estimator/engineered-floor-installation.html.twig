@@ -1,0 +1,23 @@
+<form action="#" class="estimate-form"  id="projectB" autocomplete="off" data-abide novalidate>
+    <h2><span class="primary-text">You Selected:</span> Pre finished or Engineered Hardwood floor installation</h2>
+    <input type="hidden" name="BaseB" value="{{ get_field('engineered_installation_base_price', 'option') }}">
+    {% set type = "B" %}
+    {% set price_key = "pre_finished_and_engineered_price" %}
+
+    {% include 'partials/estimator/fields/own.html.twig' %}
+    <div class="no">
+        {% include 'partials/estimator/fields/solid.html.twig' %}
+        {% include 'partials/estimator/fields/species.html.twig' %}
+        {% include 'partials/estimator/fields/width.html.twig' %}
+        {% include 'partials/estimator/fields/stain.html.twig' %}
+        {% include 'partials/estimator/fields/finish.html.twig' %}
+        {% include 'partials/estimator/fields/grade.html.twig' %}
+    </div>
+    {% include 'partials/estimator/fields/nailed.html.twig' %}
+    {% include 'partials/estimator/fields/square.html.twig' %}
+    {% include 'partials/estimator/fields/removal.html.twig' %}
+    {% include 'partials/estimator/fields/baseboard.html.twig' %}
+
+    <a href="#" class="button prev">Prev</a>
+    <button class="button next" type="submit">NEXT</button>
+</form>

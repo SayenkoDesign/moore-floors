@@ -1,0 +1,14 @@
+{% set width_started = false %}
+{% for plank in get_field('width_planks', 'option') if plank[price_key] != "" %}
+    {% if loop.first %}
+        {% set width_started = true %}
+            <label>Plank Width
+                <select name="width{{ type }}">
+    {% endif %}
+        <option value="{{ plank.title }}" data-amount="{{ plank[price_key] }}">{{ plank.title }}</option>
+{% endfor %}
+{% if width_started %}
+    </select>
+</label>
+<br>
+{% endif %}

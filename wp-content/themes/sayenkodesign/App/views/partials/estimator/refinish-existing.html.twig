@@ -1,0 +1,13 @@
+<form action="#" class="estimate-form"  id="projectC" autocomplete="off" data-abide novalidate>
+    <h2><span class="primary-text">You Selected:</span> Refinish Existing Hardwood flooring</h2>
+    <input type="hidden" name="BaseC" value="{{ get_field('refinish_base_price', 'option') }}">
+    {% set type = "C" %}
+    {% set price_key = "refinish_price" %}
+    {% include 'partials/estimator/fields/species.html.twig' %}
+    {% include 'partials/estimator/fields/stain.html.twig' %}
+    {% include 'partials/estimator/fields/finish.html.twig' %}
+    {% include 'partials/estimator/fields/square.html.twig' %}
+    {% include 'partials/estimator/fields/baseboard.html.twig' %}
+    <a href="#" class="button prev">Prev</a>
+    <button class="button next" type="submit">NEXT</button>
+</form>

@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__.'/App/bootstrap.php';
+require_once __DIR__.'/App/estimator.php';
 
 use Sayenko\Stylesheet;
 use Sayenko\Script;
@@ -26,7 +27,7 @@ $stylesheet->register();
 add_action('wp_enqueue_scripts', function() {
     wp_enqueue_script('jquery');
 });
-$script = new Script('script', get_stylesheet_directory_uri() . '/web/scripts-min/app.min.js', ['jquery']);
+$script = new Script('app', get_stylesheet_directory_uri() . '/web/scripts-min/app.min.js', ['jquery']);
 $script->register();
 
 // post types
@@ -81,6 +82,16 @@ if (function_exists('acf_add_options_page')) {
         'page_title'  => 'Footer',
         'menu_title'  => 'Footer',
         'parent_slug' => $parent['menu_slug'],
+    ]);
+
+
+    $parent = acf_add_options_page([
+        'page_title'    => 'Schedule',
+        'menu_title'    => 'Schedule Settings',
+        'menu_slug'     => 'schedule-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false,
+        'icon_url'      => 'dashicons-calendar-alt',
     ]);
 }
 
@@ -156,3 +167,8 @@ HTML;
         }
     );
 });
+
+
+function processEstimateForm() {
+
+}

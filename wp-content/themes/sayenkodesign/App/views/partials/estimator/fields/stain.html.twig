@@ -1,0 +1,27 @@
+{% set stain_started = false %}
+{% for stain in get_field('stain', 'option') if stain[price_key] != "" %}
+    {% if loop.first %}
+    {% set stain_started = true %}
+        <div class="row">
+            <div class="medium-8 columns">
+                <label>Do you want a stain?</label>
+            </div>
+            <div class="medium-4 columns text-right">
+    {% endif %}
+    <div class="radio-wrapper">
+        <input
+            type="radio"
+            name="stain{{ type }}"
+            id="stain{{ type }}{{ loop.index }}"
+            value="{{ stain.title }}"
+            data-amount="{{ stain[price_key] }}"
+            {% if loop.first %}checked{% endif %}
+        />
+        <label for="stain{{ type }}{{ loop.index }}">{{ stain.title }}</label>
+    </div>
+{% endfor %}
+{% if stain_started %}
+            </div>
+        </div>
+<br>
+{% endif %}

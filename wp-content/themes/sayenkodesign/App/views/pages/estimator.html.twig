@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+{% set title = "Instant Quote" %}
+{% block content %}
+    {% if get_field('warranty_image', 'option').url is defined %}
+        <section class="warranty"><img src="{{ get_field('warranty_image', 'option').url | raw }}" /></section>
+    {% endif %}
+    <section class="generic-content" xmlns="http://www.w3.org/1999/html">
+        <div class="row">
+            <div class="large-9 large-centered columns">
+                <div class="row steps">
+                    <div class="small-4 columns">
+                        <div class="step active">
+                            1
+                        </div>
+                        <h2>
+                            <small>Select</small>
+                            Project
+                        </h2>
+                    </div>
+                    <div class="small-4 columns">
+                        <div class="step">
+                            2
+                        </div>
+                        <h2>
+                            <small>Project</small>
+                            Details
+                        </h2>
+                    </div>
+                    <div class="small-4 columns">
+                        <div class="step">
+                            3
+                        </div>
+                        <h2>
+                            <small>Price</small>
+                            Estimate
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-10 large-centered columns">
+                        <form class="estimate-form" id="projectType" data-abide novalidate>
+                            <div class="row column">
+                                <input type="radio" name="project" value="A" id="projectOptionA" required checked>
+                                <label for="projectOptionA">Hardwood floor Installation</label>
+                            </div>
+                            <div class="row column">
+                                <input type="radio" name="project" value="B" id="projectOptionB" required>
+                                <label for="projectOptionB">Pre finished or Engineered Hardwood floor installation</label>
+                            </div>
+                            <div class="row column">
+                                <input type="radio" name="project" value="C" id="projectOptionC" required>
+                                <label for="projectOptionC">Refinish Existing Hardwood flooring</label>
+                            </div>
+                            <div class="row column">
+                                <input type="radio" name="project" value="D" id="projectOptionD" required>
+                                <label for="projectOptionD">Add on new hardwood flooring and refinish existing Hardwood flooring</label>
+                            </div>
+                            <div class="navigation">
+                                <button class="button next" type="submit">NEXT</button>
+                            </div>
+                        </form>
+                        <div class="estimate-details">
+                            <div class="quote"></div>
+                            <div class="navigation text-center">
+                                <a href="#" class="ready primary hollow button">GET STARTED</a>
+                            </div>
+                            <form action="" class="estimate-form estimate-form-submit" method="post" data-abide novalidate>
+                                <input type="hidden" name="estimate">
+                                <div class="row">
+                                    <div class="medium-6 columns">
+                                        <input type="text" name="aname" placeholder="Name*" required pattern="alpha_numeric">
+                                        <span class="form-error">This field is required.</span>
+                                    </div>
+                                    <div class="medium-6 columns">
+                                        <input type="text" name="phone" placeholder="Phone*" required pattern="alpha_numeric">
+                                        <span class="form-error">This field is required.</span>
+                                    </div>
+                                </div>
+                                <div class="row column">
+                                    <input type="text" name="email" placeholder="Email*" required pattern="email">
+                                    <span class="form-error">This field is required.</span>
+                                </div>
+                                <div class="row">
+                                    <div class="medium-6 columns">
+                                        <input type="text" name="state" placeholder="State" pattern="alpha">
+                                    </div>
+                                    <div class="medium-6 columns">
+                                        <input type="text" name="zipcode" placeholder="Zip Code*" required>
+                                        <span class="form-error">This field is required.</span>
+                                    </div>
+                                </div>
+                                <div class="row column">
+                                    <input type="text" name="how" placeholder="How did you find us?*" required pattern="alpha_numeric">
+                                    <span class="form-error">This field is required.</span>
+                                </div>
+                                <div class="navigation">
+                                    <a href="#" class="button prev">PREVIOUS</a>
+                                    <button class="button next" type="submit">NEXT</button>
+                                </div>
+                            </form>
+                        </div>
+                        {% include 'partials/estimator/hardwood-floor-installation.html.twig' %}
+                        {% include 'partials/estimator/engineered-floor-installation.html.twig' %}
+                        {% include 'partials/estimator/refinish-existing.html.twig' %}
+                        {% include 'partials/estimator/hardwood-flooring-and-refinish-existing.html.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

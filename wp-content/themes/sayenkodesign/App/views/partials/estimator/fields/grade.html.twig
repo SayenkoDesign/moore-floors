@@ -1,0 +1,8 @@
+<label>Where in the home are you installing the floor?
+    <select name="grade{{ type }}" id="">
+        {% for grade in get_field('grade', 'option') %}
+            <option value="{{ grade.title }}" data-amount="0">{{ grade.title }}</option>
+        {% endfor %}
+    </select>
+</label>
+<br>

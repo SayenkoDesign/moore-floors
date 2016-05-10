@@ -1,0 +1,25 @@
+<label>Is there removal of existing floor coverings?
+    <select name="removal{{ type }}" id="removal{{ type }}">
+        <option value="no" selected>No</option>
+        <option value="yes">Yes</option>
+    </select>
+</label>
+<div class="yes row small-up-1 medium-up-2">
+{% for removal in get_field('removal_flooring_types', 'option') if removal[price_key] != "" %}
+    <div class="column">
+        <label for="removal{{ type }}{{ loop.index }}">{{ removal.title }}
+            <input
+                    type="number"
+                    name="removal{{ type }}Rooms"
+                    id="removal{{ type }}{{ loop.index }}"
+                    data-title="{{ removal.title }}"
+                    data-amount="{{ removal[price_key] }}"
+                    data-type="{{ removal.title }}"
+                    min="0"
+                    step="1"
+            >
+        </label>
+    </div>
+{% endfor %}
+</div>
+<br>

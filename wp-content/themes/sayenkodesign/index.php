@@ -49,6 +49,47 @@ else if(is_search()) {
     wp_reset_postdata();
     the_post();
 }
+//estimate page
+else if(is_page('estimate')) {
+    error_reporting(E_ALL);
+    if(isset($_POST['estimate'])){
+        global $wpdb;
+        $table = $container->getParameter('estimator.estimates_table');
+        $insert = <<<SQL
+          INSERT INTO $table (`name`, `phone`, `email`, `state`, `zip`, `how`, `service`, `price`, `sq_ft`, `modifiers`, `removal`) 
+          VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+SQL;
+        $name = $_POST['aname'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $state = $_POST['state'];
+        $zip = $_POST['zipcode'];
+        $how = $_POST['how'];
+        $estimate = json_decode(stripslashes_deep($_POST['estimate']), true);
+        $service = $estimate['service'];
+        $price = $estimate['price'];
+        $sqFt = $estimate['square_feet'];
+        $modifiers = json_encode($estimate['modifiers']);
+        $removal = json_encode($estimate['removal']);
+        $isValid = true;
+        if(!$name || !$phone || !$email || !$zip || !$how || filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+            $isValid = false;
+            $data['message'] = "Was unable to process the form. Some fields are missing or there is an invalid email. Please try again.";
+        }
+        if($isValid) {
+            $isValid = $wpdb->query($wpdb->prepare($insert, $name, $phone, $email, $state, $zip, $how, $service, $price, $sqFt, $modifiers, $removal));
+        }
+        if(!$isValid) {
+            $data['message'] = "Was unable to process the form due to an unexpected error. Please try again later.";
+        } else {
+            $data['message'] = "your message was sent. We will contact you ASAP.";
+        }
+
+        $template = 'pages/message.html.twig';
+    } else {
+        $template = 'pages/estimator.html.twig';
+    }
+}
 // home page
 else if(is_page() || get_page_template_slug() == 'page-templates/home.php') {
     $template = 'base.html.twig';

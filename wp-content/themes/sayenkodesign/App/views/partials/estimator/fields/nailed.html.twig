@@ -1,0 +1,16 @@
+{% set nailed_started = false %}
+{% for nailed in get_field('nailed_down', 'option') if nailed[price_key] != "" %}
+    {% if loop.first %}
+        {% set nailed_started = true %}
+<label>Is the material to be Nailed down on wood subfloor
+    <select name="nailed{{ type }}" id="">
+        {% endif %}
+        <option value="{{ nailed.title }}" data-amount="{{ nailed[price_key] }}">{{ nailed.title }}</option>
+        {% endfor %}
+        {% if nailed_started %}
+    </select>
+</label>
+{% endif %}
+{% if nailed_started %}
+<br>
+{% endif %}

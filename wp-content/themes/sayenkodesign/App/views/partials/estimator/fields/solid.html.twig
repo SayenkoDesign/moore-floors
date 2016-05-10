@@ -1,0 +1,14 @@
+{% set solid_started = false %}
+{% for solid in get_field('solid_wood', 'option') if solid[price_key] != "" %}
+    {% if loop.first %}
+        {% set solid_started = true %}
+        <label>What type of wood would you like?
+            <select name="solid{{ type }}" id="">
+    {% endif %}
+    <option value="{{ solid.title }}" data-amount="{{ solid[price_key] }}">{{ solid.title }}</option>
+{% endfor %}
+{% if solid_started %}
+    </select>
+</label>
+<br>
+{% endif %}

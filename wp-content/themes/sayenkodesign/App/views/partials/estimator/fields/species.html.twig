@@ -1,0 +1,30 @@
+{% set species_started = false %}
+{% for species in get_field('wood_species', 'option') if species[price_key] != "" or (price_key2 is defined and species[price_key2] != "") %}
+    {% if loop.first %}
+        {% set species_started = true %}
+            <div class="species">
+                <label>Select Wood Species</label>
+    {% endif %}
+        <label for="species{{ type }}{{ loop.index }}" class="hide-for-small-only {% if loop.first %}active{% endif %}">
+            <span data-tooltip aria-haspopup="true" class="has-tip top" data-disable-hover="false" tabindex="1" title="{{ species.title }}">
+                <img src="{{ species.image.url }}" alt="">
+            </span>
+        </label>
+        <div class="radio-wrapper hide-for-medium">
+            <input
+                type="radio"
+                name="species{{ type }}"
+                value="{{ species.title }}"
+                data-amount="{{ species[price_key] }}"
+                {% if price_key2 is defined %}data-amount2="{{ species[price_key2] }}"{% endif %}
+                id="species{{ type }}{{ loop.index }}"
+                required
+                {% if loop.first %}checked{% endif %}
+            >
+            <label for="species{{ type }}{{ loop.index }}" class="hide-for-medium">{{ species.title }}</label>
+        </div>
+{% endfor %}
+    {% if species_started %}
+</div>
+<br>
+{% endif %}

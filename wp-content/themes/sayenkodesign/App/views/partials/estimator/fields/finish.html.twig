@@ -1,0 +1,45 @@
+{% set finish_started = false %}
+{% for finish in get_field('finish', 'option') if finish[price_key] != "" %}
+    {% if loop.first %}
+    {% set finish_started = true %}
+        <div class="row">
+            <div class="medium-8 columns">
+                <label>Select Finish Type</label>
+            </div>
+            <div class="medium-4 columns text-right">
+                <a data-open="exampleModal1">Need Help</a>
+                <div class="full reveal" id="exampleModal1" data-reveal>
+                    <div class="row column close-button-wrapper">
+                        <button class="close-button" data-close aria-label="Close modal" type="button"></button>
+                    </div>
+                    <div class="row reveal-content">
+                        <div class="large-10 large-centered columns">
+                            {% for finish2 in get_field('finish', 'option') if finish[price_key] != "" %}
+                                <h3><span class="primary-text">{{ finish2.title | raw }}</span></h3>
+                                <div class="description">
+                                    {{ finish2.description | raw }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row column">
+    {% endif %}
+        <div class="radio-wrapper">
+            <input
+                    type="radio"
+                    name="finish{{ type }}"
+                    id="finish{{ type }}{{ loop.index }}"
+                    value="{{ finish.title }}"
+                    data-amount="{{ finish[price_key] }}"
+                    {% if loop.first %}checked{% endif %}
+            />
+            <label for="finish{{ type }}{{ loop.index }}">{{ finish.title | raw }}</label>
+        </div>
+{% endfor %}
+{% if finish_started %}
+</div>
+<br>
+{% endif %}
