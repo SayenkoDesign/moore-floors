@@ -106,6 +106,33 @@ http://support.advancedcustomfields.com/
 
 == Changelog ==
 
+= 5.3.7 =
+* Options page: Added new 'update_button' setting to modify update button text
+* Options page: Added columns support (Screen Options)
+* Core: Added widget preview / save compatibility with the customizer
+* Core: Minor fixes and improvements
+* Language: Updated German translation - thanks to Ralf Koller
+* Language: Updated French Translation - thanks to Maxime Bernard-Jacquet
+
+= 5.3.6.1 =
+* Flexible Content field: Fixed PHP error in 'acf/fields/flexible_content/layout_title' filter (when used as a sub field)
+* Core: Fixed bug causing `get_field()` to load from the incorrect post (when within a custom WP_Query loop)
+
+= 5.3.6 =
+* Flexible Content field: Added new 'acf/fields/flexible_content/layout_title' filter to customize layout title
+* Image field: Fixed bug where searching within media library would ignore restriction settings
+* File field: Same as above
+* Field group: Added post types to comment form location rules
+* Color Picker field: Added 'color_picker_args' JS filter to modify wpColorPicker args
+* API: Improved `get_` functions to load value from the current queried object (post, user, term)
+* Core: Added new 'acf/translate_field' filter to translate field settings text
+* Core: Added new 'acf/translate_field_group' filter to translate field group settings text
+* Core: Removed 'l10n_field' and 'l10n_field_group' settings
+* Core: Fixed bug causing 'acf/input/admin_head' action to run twice
+* Core: Added support for new WP 4.5 term edit page
+* Core: Moved google map and wysiwyg JS initialisation later in the page load to help speed up edit screens
+* Core: Minor fixes and improvements
+
 = 5.3.5 =
 * User field: Fixed pagination bug causing missing results
 * Core: Added new filter 'acf/location/screen' to customize location rules matching args
@@ -973,7 +1000,7 @@ http://support.advancedcustomfields.com/
 = 3.3.8 =
 * [Added] Gallery field { auto add image on upload, new style to show already added images
 * [Fixed] Fix saving value issue with WP e-commerce http://support.advancedcustomfields.com/discussion/comment/7026#Comment_7026
-* [Updated] Date picker field { new display format option (different from save format), UI overhaul
+* [Updated] Date picker field { new Display Format option (different from save format), UI overhaul
 * [Added] Add new field - Number
 * [Fixed] Test post object / select based fields for saving empty value - http://support.advancedcustomfields.com/discussion/2759/post-object-and-conditional-statement
 

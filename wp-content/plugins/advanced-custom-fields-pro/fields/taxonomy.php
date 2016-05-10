@@ -231,20 +231,7 @@ class acf_field_taxonomy extends acf_field {
 	function get_term_title( $term, $field, $post_id = 0 ) {
 		
 		// get post_id
-		if( !$post_id ) {
-			
-			$form_data = acf_get_setting('form_data');
-			
-			if( !empty($form_data['post_id']) ) {
-				
-				$post_id = $form_data['post_id'];
-				
-			} else {
-				
-				$post_id = get_the_ID();
-				
-			}
-		}
+		if( !$post_id ) $post_id = acf_get_form_data('post_id');
 		
 		
 		// vars
@@ -976,7 +963,7 @@ class acf_field_taxonomy extends acf_field {
 		?><form method="post"><?php
 		
 		acf_render_field_wrap(array(
-			'label'			=> 'Name',
+			'label'			=> __('Name', 'acf'),
 			'name'			=> 'term_name',
 			'type'			=> 'text'
 		));
@@ -998,7 +985,7 @@ class acf_field_taxonomy extends acf_field {
 			}
 			
 			acf_render_field_wrap(array(
-				'label'			=> 'Parent',
+				'label'			=> __('Parent', 'acf'),
 				'name'			=> 'term_parent',
 				'type'			=> 'select',
 				'allow_null'	=> 1,
