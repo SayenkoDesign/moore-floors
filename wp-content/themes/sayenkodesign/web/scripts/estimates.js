@@ -248,10 +248,10 @@ jQuery(function() {
                     return 'Hardwood Floor Installation';
                     break;
                 case 'B':
-                    return 'Refinish Existing Hardwood Flooring';
+                    return 'Pre Finished or Engineered Hardwood Floor Installation';
                     break;
                 case 'C':
-                    return 'Pre Finished or Engineered Hardwood Floor Installation';
+                    return 'Refinish Existing Hardwood Flooring';
                     break;
                 case 'D':
                     return 'Add on New Hardwood Flooring and Refinish Existing Hardwood Flooring';
